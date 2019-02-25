@@ -1,6 +1,6 @@
 # Let's Play: Ancient Greek Punishment: Teaches Typing
 
-_Let's Play: Ancient Greek Punishment: Teaches Typing_ is yet another new edition in the _Let's Play: Ancient Greek Punishment_ series, focusing on a retelling of five (kind of) mythological punishments. In _Teaches Typing_ you learn to help in this helpfully Sisyphean environment. It's like Mavis Beacon, but in Hades.
+_Let's Play: Ancient Greek Punishment: Teaches Typing_ is yet another new edition in the _Let's Play: Ancient Greek Punishment_ series, focusing on a retelling of five (kind of) mythological punishments. In _Teaches Typing_ you learn to type in this helpfully Sisyphean environment. It's like Mavis Beacon, but in Hades.
 
 __Details soon.__
 
