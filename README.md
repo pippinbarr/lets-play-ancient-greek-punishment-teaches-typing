@@ -2,7 +2,12 @@
 
 _Let's Play: Ancient Greek Punishment: Teaches Typing_ is yet another new edition in the _Let's Play: Ancient Greek Punishment_ series, focusing on a retelling of five (kind of) mythological punishments. In _Teaches Typing_ you learn to type in this helpfully Sisyphean environment. It's like Mavis Beacon, but in Hades.
 
-__Details soon.__
+#### Playable version coming soon
+
+#### Read the [Press kit](https://github.com/pippinbarr/lets-play-ancient-greek-punishment-teaches-typing/blob/master/press/README.md) for press information
+#### Read the [Process documentation](https://github.com/pippinbarr/lets-play-ancient-greek-punishment-teaches-typing/blob/master/process/README.md) for process journal, to do list, and related work
+#### Read the [Commit History](https://github.com/pippinbarr/lets-play-ancient-greek-punishment-teaches-typing/commits/master) for step-by-step information about how the project was built
+#### Look at the [Code Repository](https://github.com/pippinbarr/lets-play-ancient-greek-punishment-teaches-typing) for source code etc.
 
 ## Previous editions
 1. [Let's Play: Ancient Greek Punishment](http://www.pippinbarr.com/games/letsplayancientgreekpunishment/LetsPlayAncientGreekPunishment.html) (2011)
