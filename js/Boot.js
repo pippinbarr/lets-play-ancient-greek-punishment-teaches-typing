@@ -11,7 +11,6 @@ let Boot = new Phaser.Class({
   },
 
   create: function () {
-    console.log("Boot?")
     this.scene.start('preloader');
   },
 });

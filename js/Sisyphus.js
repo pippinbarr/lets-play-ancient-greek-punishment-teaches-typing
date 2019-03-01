@@ -5,19 +5,22 @@ let Sisyphus = new Phaser.Class({
   initialize: function Sisyphus () {
     Phaser.Scene.call(this, { key: 'sisyphus' });
 
-    this.MAX_TIME_PER_INPUT = 100;
+    // Used to set rate of animation relative to typing
     this.MAX_FRAME_TIME = 800;
     this.MIN_FRAME_TIME = 100;
-    // Used to track rate of keypresses
-    this.timeSinceLastInput = 100000;
+
+    this.wpm = 0;
+    this.MIN_WPM = 50;
+
     // Force exerted between rock and Sisypus
     // -1 = no rock force (Sisyphus pushes top speed)
     // 0 = equillibrium and no movement
     // +1 = total rock force (Sisyphus retreats)
     this.rockForce = -1;
-    // Track their use of playing with the keys so we know they get it
-    this.MIN_KEY_COUNT = 20;
-    this.keyCount = 0;
+
+    this.testText1 = "The rain in Spain falls mainly on the plain. "
+    this.testText2 = "The mansplainer mansplained all my pain away, it was quite a day. "
+    this.typingIndex = 0;
   },
 
   create: function () {
@@ -39,120 +42,166 @@ let Sisyphus = new Phaser.Class({
     this.sisyphus.setScale(4,4);
 
     // Add the various animations
-    this.createAnimation('start',1,52);
-    this.createAnimation('reverseStart',52,1);
-    this.createAnimation('uphill',51,95);
-    this.createAnimation('downhill',95,51);
+    this.createAnimation('start','sisyphus/sisyphus/sisyphus',1,52,10,false);
+    this.createAnimation('uphill','sisyphus/sisyphus/sisyphus',51,95,10,false);
+    this.createAnimation('downhill','sisyphus/sisyphus/sisyphus',95,51,20,false);
 
-    // Sisyphus starts off pushing by default
     this.sisyphus.anims.play('start');
+    // this.sisyphus.anims.pause();
+
+    this.sisyphus.on('animationcomplete',function (animation,frame) {
+      switch(animation.key) {
+        case 'start':
+        this.sisyphus.anims.play('uphill');
+        break;
+
+        case 'uphill':
+        if (this.sisyphus.anims.forward) {
+          this.sisyphus.anims.play('downhill');
+        }
+        else {
+          this.sisyphus.anims.forward = true;
+          this.sisyphus.anims.play('uphill');
+          this.sisyphus.anims.currentAnim.pause();
+        }
+        break;
+
+        case 'downhill':
+        this.sisyphus.anims.forward = true;
+        this.sisyphus.anims.play('uphill');
+        this.sisyphus.anims.currentAnim.pause();
+        break;
+      }
+    },this);
 
     this.defaultFrameTime = this.sisyphus.anims.currentAnim.msPerFrame;
 
-    // Add input tracking
-    this.pushKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
+    this.input.keyboard.on('keydown', function (event) {
+      this.handleInput(event);
+    },this);
 
-    // Add instructions
-    let instructionStyle = { fontFamily: 'Commodore', fontSize: '24px', fill: '#000', wordWrap: true, align: 'center' };
-    let instructionString = "YOU ARE THE ROCK\nRAPIDLY PRESS\nLEFT ARROW\nTO ROLL DOWNHILL";
-    this.instructionsText = this.add.text(this.game.canvas.width/4,100,instructionString,instructionStyle);
-    this.instructionsText.setOrigin(0.5);
+    this.wpms = [];
+    this.wordsTyped = 0;
+    this.charsTyped = 0;
+    this.timeForWord = 0;
+    this.wpmInterval = setInterval(() => {
+      this.wpm = this.wordsTyped * 60;
+      this.wordsTyped = 0;
+      this.charsTyped = 0;
+      // this.wpmText.text = `${this.wpm} WPM`;
+    },1000);
+
+    // Add input tracking
+    // this.pushKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
+
+    let cursorRect = new Phaser.Geom.Rectangle(100,10,18,30);
+    this.cursor = this.add.graphics();
+    this.cursor.fillStyle(0xffff00);
+    this.cursor.fillRectShape(cursorRect);
+
+    // Add text to type
+    let inputStyle = { fontFamily: 'Commodore', fontSize: '24px', fill: '#000', wordWrap: true, align: 'center' };
+    this.inputText = this.add.text(100,10,this.testText1,inputStyle);
+    this.inputText.setOrigin(0);
+
+    this.CHAR_WIDTH = this.inputText.width / this.testText1.length;
+
+    this.inputText2 = this.add.text(this.inputText.x + this.inputText.width,10,this.testText2,inputStyle);
+    this.inputText2.setOrigin(0);
+
+    this.currentText = this.testText1;
+
+    // Add WPM text
+    let wpmStyle = { fontFamily: 'Commodore', fontSize: '24px', fill: '#fff', wordWrap: true, align: 'center' };
+    let wpmString = "0 WPM";
+    this.wpmText = this.add.text(100,340,wpmString,wpmStyle);
+    this.wpmText.setOrigin(0);
+
+  },
+
+  handleInput: function (event) {
+    if (event.key === this.currentText.charAt(this.typingIndex)) {
+      // Correct
+      if ("-/ ".indexOf(event.key) !== -1) {
+        this.wordsTyped++;
+        if (this.wpms.length > 5) this.wpms.shift();
+        this.wpms.push(60 / (this.timeForWord / 1000));
+        this.wpm = this.wpms.reduce((a,b) => a + b, 0) / this.wpms.length
+        this.wpmText.text = `${this.wpm} WPM`;
+        this.timeForWord = 0;
+      }
+
+      this.typingIndex++;
+      if (this.typingIndex === this.currentText.length) {
+        this.currentText = (this.currentText === this.testText1) ? this.testText2 : this.testText1;
+        this.typingIndex = 0;
+      }
+
+      this.inputText.x -= this.CHAR_WIDTH;
+      this.inputText2.x -= this.CHAR_WIDTH;
+
+      if (this.inputText.x + this.inputText.width < 0) {
+        this.inputText.x = this.inputText2.x + this.inputText2.width;
+      }
+      if (this.inputText2.x + this.inputText2.width < 0) {
+        this.inputText2.x = this.inputText.x + this.inputText.width;
+      }
+    }
+    else {
+      if (event.key !== 'Shift') {
+        // Incorrect
+      }
+    }
   },
 
   update: function (time,delta) {
 
     if (this.gameIsOver) return;
 
-    this.timeSinceLastInput += delta;
+    this.timeForWord += delta;
+
+    // this.timeSinceLastInput += delta;
 
     let anims = this.sisyphus.anims;
 
-    if (anims.currentAnim.key === 'start' && anims.currentFrame.index === anims.currentAnim.frames.length - 1) {
-      this.sisyphus.anims.play('uphill');
-    }
-
     let index = anims.currentFrame.index;
 
-    if (this.timeSinceLastInput < this.MAX_TIME_PER_INPUT) {
+    if (this.wpm > this.MIN_WPM) {
       this.rockForce = Math.min(this.rockForce + 0.05,1);
+      if (this.sisyphus.anims.currentAnim.key === 'start') {
+        this.sisyphus.anims.currentAnim.resume();
+      }
+      else if (this.sisyphus.anims.currentAnim.key === 'uphill'){
+        this.sisyphus.anims.currentAnim.resume();
+        this.sisyphus.anims.forward = true;
+      }
     }
     else {
       this.rockForce = Math.max(this.rockForce - 0.05,-1);
-    }
-
-    switch (anims.currentAnim.key) {
-      case 'uphill':
-      if (anims.currentFrame.index === anims.currentAnim.frames.length) {
-        this.gameIsOver = true;
-        this.victorySFX.play();
-        setTimeout(() => {
-          this.gameOver();
-        },1000)
+      if (this.sisyphus.anims.currentAnim.key === 'start') {
+        this.sisyphus.anims.currentAnim.pause();
       }
-      if (this.rockForce > 0) {
-        anims.play('downhill');
-        anims.play('downhill',false,anims.currentAnim.frames.length - index);
-      }
-      break;
-
-      case 'downhill':
-      if (this.rockForce < 0) {
-        anims.play('uphill');
-        anims.play('uphill',false,anims.currentAnim.frames.length - index);
-      }
-      break;
-    }
-
-    anims.msPerFrame = (1 - Math.abs(this.rockForce)) * this.MAX_FRAME_TIME + this.MIN_FRAME_TIME;
-
-    if (anims.currentAnim.key !== 'start') {
-      this.handleInput();
-    }
-  },
-
-  handleInput: function () {
-    if (Phaser.Input.Keyboard.JustDown(this.pushKey)) {
-      this.timeSinceLastInput = 0;
-      if (this.instructionsText.visible && this.sisyphus.anims.currentAnim.key != 'start') {
-        this.keyCount++;
-        if (this.keyCount >= this.MIN_KEY_COUNT) {
-          this.instructionsText.visible = false;
+      else if (this.sisyphus.anims.currentAnim.key === 'uphill'){
+        if (!this.sisyphus.anims.currentAnim.paused) {
+          this.sisyphus.anims.forward = false;
         }
       }
     }
   },
 
-  gameOver: function () {
-    this.gameIsOver = true;
-
-    this.gameOverSFX.play();
-
-    let screenRect = new Phaser.Geom.Rectangle(0,0, this.game.canvas.width, this.game.canvas.height);
-    let gameOverBackground = this.add.graphics({ fillStyle: { color: '#000' } });
-    gameOverBackground.fillRectShape(screenRect);
-    let gameOverStyle = { fontFamily: 'Commodore', fontSize: '24px', fill: '#aaf', wordWrap: true, align: 'center' };
-    let gameOverString = "YOU LOSE!\n\nSISYPHUS REACHED THE TOP OF THE HILL!";
-    let gameOverText = this.add.text(this.game.canvas.width/2,this.game.canvas.height/2,gameOverString,gameOverStyle);
-    gameOverText.setOrigin(0.5);
-
-    setTimeout(() => {
-      this.scene.start('menu');
-    },4000);
-  },
-
   // createAnimation(name,start,end)
   //
   // Helper function to generate the frames and animation for Sisyphus between set limits
-  createAnimation: function (name,start,end) {
+  createAnimation: function (name,path,start,end,framerate,repeat) {
     let frames = this.anims.generateFrameNames('atlas', {
       start: start, end: end, zeroPad: 0,
-      prefix: 'sisyphus/sisyphus/sisyphus_', suffix: '.png'
+      prefix: path + '_', suffix: '.png'
     });
     let config = {
       key: name,
       frames: frames,
-      frameRate: 10,
-      repeat: 0,
+      frameRate: framerate,
+      repeat: repeat,
     };
     this.anims.create(config);
   }
