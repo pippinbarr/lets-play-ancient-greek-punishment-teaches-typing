@@ -10,7 +10,8 @@ let Sisyphus = new Phaser.Class({
     this.MIN_FRAME_TIME = 100;
 
     this.wpm = 0;
-    this.MIN_WPM = 50;
+    this.MIN_WPM = 30;
+    this.AVERAGE_WORD_LENGTH = 6; // Actually it's 5 + a space/punctuation character
 
     // Force exerted between rock and Sisypus
     // -1 = no rock force (Sisyphus pushes top speed)
@@ -21,12 +22,15 @@ let Sisyphus = new Phaser.Class({
     this.testText1 = "The rain in Spain falls mainly on the plain. "
     this.testText2 = "The mansplainer mansplained all my pain away, it was quite a day. "
     this.typingIndex = 0;
+
+    this.elapsed = 0;
   },
 
   create: function () {
     this.cameras.main.setBackgroundColor('#aaf');
 
     this.gameIsOver = false;
+    this.failures = 0;
 
     // Sound
     this.victorySFX = this.sound.add('victory');
@@ -44,7 +48,7 @@ let Sisyphus = new Phaser.Class({
     // Add the various animations
     this.createAnimation('start','sisyphus/sisyphus/sisyphus',1,52,10,false);
     this.createAnimation('uphill','sisyphus/sisyphus/sisyphus',51,95,10,false);
-    this.createAnimation('downhill','sisyphus/sisyphus/sisyphus',95,51,20,false);
+    this.createAnimation('downhill','sisyphus/sisyphus/sisyphus',95,51,25,false);
 
     this.sisyphus.anims.play('start');
     // this.sisyphus.anims.pause();
@@ -58,6 +62,7 @@ let Sisyphus = new Phaser.Class({
         case 'uphill':
         if (this.sisyphus.anims.forward) {
           this.sisyphus.anims.play('downhill');
+          this.inputEnabled = false;
         }
         else {
           this.sisyphus.anims.forward = true;
@@ -67,9 +72,12 @@ let Sisyphus = new Phaser.Class({
         break;
 
         case 'downhill':
+        this.inputEnabled = true;
         this.sisyphus.anims.forward = true;
         this.sisyphus.anims.play('uphill');
         this.sisyphus.anims.currentAnim.pause();
+        this.failures++;
+        this.failureText.text = `FAILURES: ${this.failures}`;
         break;
       }
     },this);
@@ -77,26 +85,32 @@ let Sisyphus = new Phaser.Class({
     this.defaultFrameTime = this.sisyphus.anims.currentAnim.msPerFrame;
 
     this.input.keyboard.on('keydown', function (event) {
-      this.handleInput(event);
+      if (this.inputEnabled) this.handleInput(event);
     },this);
+
+    this.inputEnabled = true;
 
     this.wpms = [];
     this.wordsTyped = 0;
     this.charsTyped = 0;
-    this.timeForWord = 0;
     this.wpmInterval = setInterval(() => {
-      this.wpm = this.wordsTyped * 60;
+      let wpm = ((this.charsTyped / 5) * 60 * (1000/150));
+      this.wpms.push(wpm);
+      if (this.wpms.length > 5) this.wpms.shift();
+      this.wpm = this.wpms.reduce((a,b) => a + b,0)/this.wpms.length;
+      this.wpm = Math.floor(this.wpm);
+      this.wpmText.text = `${this.wpm} WPM`;
+      this.elapsed = 0;
       this.wordsTyped = 0;
       this.charsTyped = 0;
-      // this.wpmText.text = `${this.wpm} WPM`;
-    },1000);
+    },150);
 
     // Add input tracking
     // this.pushKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
 
     let cursorRect = new Phaser.Geom.Rectangle(100,10,18,30);
     this.cursor = this.add.graphics();
-    this.cursor.fillStyle(0xffff00);
+    this.cursor.fillStyle(0x915C00);
     this.cursor.fillRectShape(cursorRect);
 
     // Add text to type
@@ -117,21 +131,27 @@ let Sisyphus = new Phaser.Class({
     this.wpmText = this.add.text(100,340,wpmString,wpmStyle);
     this.wpmText.setOrigin(0);
 
+    // Add FAILURES text
+    let failureStyle = { fontFamily: 'Commodore', fontSize: '30px', fill: '#fff', wordWrap: true, align: 'center' };
+    let failureString = "FAILURES: 0";
+    this.failureText = this.add.text(420,340,failureString,failureStyle);
+    this.failureText.setOrigin(0);
+    this.failureText.angle = -45;
   },
 
   handleInput: function (event) {
     if (event.key === this.currentText.charAt(this.typingIndex)) {
       // Correct
       if ("-/ ".indexOf(event.key) !== -1) {
-        this.wordsTyped++;
-        if (this.wpms.length > 5) this.wpms.shift();
-        this.wpms.push(60 / (this.timeForWord / 1000));
-        this.wpm = this.wpms.reduce((a,b) => a + b, 0) / this.wpms.length
-        this.wpmText.text = `${this.wpm} WPM`;
-        this.timeForWord = 0;
       }
 
       this.typingIndex++;
+      this.charsTyped++;
+      // if (this.charsTyped >= this.AVERAGE_WORD_LENGTH) {
+        // this.wordsTyped++;
+        // this.charsTyped = 0;
+      // }
+
       if (this.typingIndex === this.currentText.length) {
         this.currentText = (this.currentText === this.testText1) ? this.testText2 : this.testText1;
         this.typingIndex = 0;
@@ -158,7 +178,7 @@ let Sisyphus = new Phaser.Class({
 
     if (this.gameIsOver) return;
 
-    this.timeForWord += delta;
+    this.elapsed += delta;
 
     // this.timeSinceLastInput += delta;
 
