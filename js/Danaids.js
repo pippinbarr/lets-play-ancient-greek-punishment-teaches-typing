@@ -4,7 +4,6 @@ let Danaids = new Phaser.Class({
 
   initialize: function Danaids () {
     Phaser.Scene.call(this, { key: 'danaids' });
-
     this.MAX_FILL_TIME = 2000;
     this.FILL_PER_POUR = 20;
   },
