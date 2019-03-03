@@ -78,3 +78,60 @@ To make this work I need to
 - Figure out what kind of text will be the most fun thing to type in
 - Work out what happens if you exhaust the text (if that's something possible)
 - Markov chains on relevant texts to generate infinite fucked up texts about the myth in question???
+
+---
+
+# Sisyphus works; texts and difficulty; voice and person; wpm display; tantalus's two texts (Sunday, 3 March 2019, 14:21PM)
+
+So at this point I've implemented a fairly playable version of Sisyphus in which you can type the words, they scroll by (infinitely), your WPM is recorded, and if it've above a threshold then the animation moves forward, if not you stop or lose your place.
+
+## The texts? The difficulty levels?
+
+Most obviously absent from this version is the text itself. Which is true for all the levels. And it's really does seem like this is the key 'design' question to be addressed here in a way. There's no major need to design the typing interface because we're just taking 'best practice' from Mavis Beacon.
+
+An additional part here is if I'm having difficulty levels then I might want to have distinct texts per level, in part to make them actually more or less difficult, but perhaps also to reward higher level players with "better" texts?
+
+A simple division
+
+- Easy mode (low WPM) would have simple declarative sentences reflecting the specific action being taken. Could use Tracery to construct them so they're a bit more interesting/varied over time. Or could go all out and just have it be the exact same phrase over and over again.
+- Normal mode (medium WPM) would maybe have an actual text (or Tracery) with actual sentences that maybe have more narrative content? Subclauses? Digressions about the emotions of the actions...?
+- Hard mode (high WPM) would maybe where I could think about a Markov chain? Collect together multiple texts about the mythology in question and then Markov them for a series of sentences?
+- Nightmare mode (ridiculous WPM?) would be what? The full text of Camus' essay? Is this necessary? Maybe I'll end up thinking of something. What about something as silly as "push push push push push" but with a really high WPM threshold?
+
+## The voice and person
+
+ - "I push the boulder." - The question of person is something here... I quite like first person now that I've written it.)
+ - "Sisypus pushed the boulder." - A kind of narrator role which is sort of meta and amusin, not unlike a Stanley Parable feeling to it. (Which is, itself, kind of Sisyphean - though finite.)
+ - "He pushed the boulder." - More impersonal (easier to type than 'Sisyphus')
+ - "When pushing a boulder, it's best not to think too much about..." - Kind of situational, extending the story outward to other ideas
+ - "Sisyphus wondered whether he was happy"
+
+ A lot of this depends on the "sophistication" of the text, whether it's just declarative or actually a story or philosophy etc.
+
+## Displaying the WPM?
+
+Need to think about where to display the WPM and how to display the threshold? Something like '75/100 WPM'? And thus also '120/100 WPM' if above it. Or the WPM and the threshold separate beneath it? And for Tantalus with the two texts I guess just all the twice?
+
+WPM could go green on success I guess, though it would break the pretty strict color palette the game has.
+
+Should the WPM be attached to the figure of the character? So moving through the space with them? Or more just diagnostic.
+
+Where does Mavis display it? In the car race it's displayed as the odometer on the car of course. So it's very in world. In the more banal typing experiences it's expressed at the end of the lesson rather than live during play.
+
+So for now I think more of a traditional style?
+
+How will this end up conflicting with/fighting for space with the other textual elements from the original game(s) like the stats I display in each case? Tricky tricky. Will just have to see.
+
+## Tantalus's two texts
+
+Tantalus is the one level where you need to be able to choose between two options (apple versus water). And therefore there need to be two texts, one of which you type to reach up and one of which you type to reach down. Which is fine, but - how do you police which one is being typed? Specifically, what happens if the texts end up aligned (for a single letter or more) at some point (which will absolutely happen). In this case the default behaviour of the code right now would be that both texts would advance, and then you wouldn't really be able to choose which option to opt for? Or rather, I guess it would still work because a single character (or two) isn't enough to raise the WPM high enough for the threshold, but even so you don't really want the incorrect text to even move?
+
+One option is just "oh well" and you leave it alone. Assuming you don't get too much lining up, it shouldn't affect the gameplay itself, it would just be visually displeasing because you wouldn't have intended to enter a character into the other text, but still I guess you did.
+
+Another option would be that you choose which one you're typing before you start typing it, through some kind of selection option. But this seems like it immediately introduces a gross amount of UI that isn't really very nice to think about.
+
+Another option would be that the "selected" text alternates on its own and only sticks if you start typing (WPM > 0). If your WPM hits zero it goes back to alternating. But again there feels like there's no reason for this and it requires extra UI and thus thinking by the player.
+
+Another option would be that a text only really starts scrolling if you type three or more characters in a row correctly? This would be a bit arbitrary but would at least allow you to type the one you intended a bit more intelligently. Maybe during that initial phase before it's "chosen" it highlights the characters and then, once you've locked into one, it starts the scrolling, but then subsides if you hit 0 WPM and reperforms the trick. It's still extra UI but it might make sense.
+
+So there's a definite issue here and a decision has to be made. Those are the solutions I can imagine for now.
