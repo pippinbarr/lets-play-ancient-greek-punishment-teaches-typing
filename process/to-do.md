@@ -17,9 +17,11 @@
 - ~~Implement beginner text with Tracery of fundamentally describing the action (simple words)~~
 - ~~Implement intermediate text with "writing lines" flavour referring to the actions that brough the character to Hades~~
 - ~~__DID A VERSION WITH CAMUS FOR NOW__ Implement advanced text with Markov chain drawing on existing texts about the character (and perhaps other stuff too where plausible? This one still needs a bit of thought, but I think can be surreal and weird. Alternatively this could be a monologue somehow.)~~
+- ~~Sit back and contemplate your texts~~
+- ~~__I WILL__ Maybe transition the beginner text to literally repeating a single word or phrase?~~
 
-- Sit back and contemplate your texts
-- Maybe transition the beginner text to literally repeating a single word or phrase?
+- Change beginner to single words, verbs in strings
+- Change advanced to a Wikipedia? or other entry about Sisyphus's objective (hills? hilltops? Mesas? Flatness?)
 
 # Prometheus
 
@@ -28,6 +30,8 @@
 # Danaids
 
 # Zeno
+
+# Camus
 
 # Mobile?
 

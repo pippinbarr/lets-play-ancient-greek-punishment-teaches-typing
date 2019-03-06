@@ -155,4 +155,28 @@ In which case I'm a little bit ready to produce a proper Sisyphus I suppose.
 
 Plus I suppose I have to think about menu systems in light of needing to to select difficulties. Shouldn't be so hard though.
 
-Hades hades hades.
+Hades hades hades. Suck bite suck bite.
+
+---
+
+# Serious text design exercise with a happy outcome (Wednesday, 6 March 2019, 16:16PM)
+
+Still puzzling over the texts. I've now produced attempts for each of the three levels:
+
+__Beginner__ involves a Tracery that builds simple descriptions of the action in question, like "Slowly push the boulder up the hill" and variations. I worry that these are kind of overkill for this easy level and that it might be more effective/interesting to have it be a single word over and over like "push" as a funny use of typing in this simplest case.
+
+__Intermediate__ involves a Tracery that builds "I will not..." sentences that reference the misdeeds of the character in question. It's pretty effective and even kind of educational to learn about what the person did rather than fixating on the symbolism of their punishment, so quite like that about this. I guess it's my favorite. On the other hand I do have a concern that outside Sisyphus there may not be enough material for it. Sisyphus did so much shit and is so famous, I'm worried the others might not live up to it. But it should be okay?
+
+__Advanced__ currently involves literally typing in Camus's essay about Sisyphus (just the little section of it called The Myth of Sisyphus actually). I experimented with a Markov Chain variation too, which leads to sort of nonsense-y stuff which, I mean I guess it's fine. However I'm concerned because... Camus didn't write an essay about every mythological punishment just this one, so it's too special a case I imagine. (Now I wonder... what about a final unlockable where you get to be Camus just writing the Sisyphus myth over and over on a type-writer? Ha ha? Maybe I like this. - MDMA-wise by the way, this literally just came up - mostly at the thought of discarding Camus from the way I'd understood the game, but wanting to conserve him.)
+
+So you can see I have some concerns. But I also have relatively okay solutions?
+
+- __Beginner__ can be a single word like "push" I think. Or maybe 10 of push and then 10 of shove and 10 of roll etc. That will actually look quite Mavis Beacon-y!! push shove roll shove shove roll shove roll push push push. Hmm! Nice word bra.
+
+- __Intermediate__ is pretty cool and I'll try to have faith I can preserve the same idea for the other myths.
+
+- __Advanced__ is a bit broken, but my key insight here is, I think, the idea that what you're typing in is about what you're trying to do. I may have mentioned this elsewhere or it may have just been a fever dream in the bathtub, but I think there's something to this. So Tantalus has texts about apples and water. Zeno has texts about... finish lines? Races won? Flags? Ha ha. Sisyphus has texts about... the tops of hills??? Prometheus has texts about breaking free of chains? Escape artists? Heh heh heh. Fuck yeah. Danaids have texts about baths. So I mean, this is pretty fucking good. Just a question of where these texts come from. Whether it's some kind of iconic text you type over and over. Or is it literally a Wikipedia entry? Or is it something else?
+
+- __Nightmare__ could be being Albert Camus writing the Myth of Sisyphus. Maybe you write the whole thing out, and then the page blows away, or it gets stolen, or burned, and so you have to start again? I mean, yeah that's fucking good. And then it could be greyed out at the bottom of the screen until you've tried all levels at beginner or something? Oh yeah. This is a thing. This is a happening thing. Or maybe you have to play Sisyphus as all three levels to unlock Camus. Ah that's fun.
+
+Okay, this was a good talk we had you and I.
