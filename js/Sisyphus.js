@@ -86,26 +86,55 @@ let Sisyphus = new Phaser.Class({
   createTypingInput: function () {
     let strings = ['NO STRINGS ASSIGNED'];
     let minWPM;
+    let grammar;
 
     switch (difficulty) {
       case 'beginner':
-      minWPM = 30;
-      let grammar = tracery.createGrammar({
+      minWPM = 40;
+      grammar = tracery.createGrammar({
         'adverb': ['slowly','steadily','gradually','painfully','resignedly','wearily','tiredly','relentlessly','eternally','infinitely'],
         'push': ['push','shove','roll','move','work','force','strain','thrust','propel','impel','advance','drive','shift','muscle'],
         'rock': ['rock','boulder','stone','burden','weight','mass','hardship','load'],
         'hill': ['hill','slope','incline','ramp','diagonal','rise','ascent','gradient'],
-        'origin':['#adverb.capitalize# #push# the #rock# up the #hill#. '],
+        'origin':['#adverb.capitalize# #push# the #rock# up the #hill#.'],
       });
 
       strings = [];
       for (let i = 0; i < 10; i++) {
-        strings.push(grammar.flatten('#origin#'));
+        strings.push(grammar.flatten('#origin# '));
       }
       break;
 
       case 'intermediate':
-      minWPM = 75;
+      minWPM = 70;
+      grammar = tracery.createGrammar({
+        'kill': ['kill','murder'],
+        'people': ['travellers','guests','visitors'],
+        'rule': ['rule','law','principle'],
+        'xenia': ['xenia','hospitality','generosity','courtesy'],
+        'anger': ['anger','provoke','cheat','reveal the secrets of'],
+        'plot': ['plot','scheme'],
+        'against': ['against','to #kill#','to dethrone'],
+        'Salmoneus': ['Salmoneus','my brother'],
+        'Tyro': ['Tyro','my niece','#Salmoneus#\'s daughter'],
+        'crime': [
+          'seduce #Tyro#',
+          '#kill# #people#',
+          'break the #rule# of #xenia#',
+          '#anger# Zeus',
+          'escape from Tartarus',
+          '#plot# #against# #Salmoneus#',
+          'reveal the location of Aegina',
+          'trap Thanatos in chains',
+        ],
+        'origin': ['I will not #crime#.'],
+      });
+
+      strings = [];
+      for (let i = 0; i < 100; i++) {
+        strings.push(grammar.flatten('#origin# '));
+      }
+
       break;
 
       case 'advanced':

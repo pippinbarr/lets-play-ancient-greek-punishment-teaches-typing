@@ -31,7 +31,8 @@ let TypingInput = new Phaser.Class({
       if (this.wpms.length > 5) this.wpms.shift();
       this.wpm = this.wpms.reduce((a,b) => a + b,0)/this.wpms.length;
       this.wpm = Math.floor(this.wpm);
-      this.wpmText.text = `${this.wpm} WPM`;
+      let wpmString = `${this.wpm} / ${this.minWPM} WPM`;
+      this.wpmText.text = wpmString;
       this.charsTyped = 0;
     },150);
 
@@ -59,7 +60,7 @@ let TypingInput = new Phaser.Class({
 
     // Add WPM text
     let wpmStyle = { fontFamily: 'Commodore', fontSize: '24px', fill: '#fff', wordWrap: true, align: 'center' };
-    let wpmString = "0 WPM";
+    let wpmString = `0 / ${this.minWPM} WPM`;
     this.wpmText = this.scene.add.text(100,340,wpmString,wpmStyle);
     this.wpmText.setOrigin(0);
   },
