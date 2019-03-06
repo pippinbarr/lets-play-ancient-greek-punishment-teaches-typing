@@ -1,11 +1,11 @@
-let scene = '';
+let difficulty = '';
 
-let Menu = new Phaser.Class({
+let DifficultyMenu = new Phaser.Class({
 
     Extends: Phaser.Scene,
 
     initialize: function Menu () {
-        Phaser.Scene.call(this, { key: 'menu' });
+        Phaser.Scene.call(this, { key: 'difficultymenu' });
     },
 
     create: function () {
@@ -15,11 +15,9 @@ let Menu = new Phaser.Class({
       title.setOrigin(0.5);
 
       let items = [
-        { text: '(S)ISYPHUS', key: 'S', scene: 'sisyphus' },
-        { text: '(T)ANTALUS', key: 'T', scene: 'tantalus' },
-        { text: '(P)ROMETHEUS', key: 'P', scene: 'prometheus' },
-        { text: '(D)ANAIDS', key: 'D', scene: 'danaids' },
-        { text: '(Z)ENO', key: 'Z', scene: 'zeno' },
+        { text: '(B)EGINNER', difficulty: 'beginner', key: 'B', scene: scene },
+        { text: '(I)NTERMEDIATE', difficulty: 'intermediate',key: 'I', scene: scene },
+        { text: '(A)DVANCED', difficulty: 'advanced',key: 'A', scene: scene },
       ];
       let itemsTop = 52*4;
       let spacing = 34;
@@ -36,8 +34,8 @@ let Menu = new Phaser.Class({
       itemText.setOrigin(0.5);
       this.input.keyboard.on('keydown', (e) => {
         if (e.key.toUpperCase() === item.key) {
-          scene = item.scene;
-          this.scene.start('difficultymenu');
+          difficulty = item.difficulty;
+          this.scene.start(item.scene);
         }
       });
     },

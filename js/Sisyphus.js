@@ -16,11 +16,6 @@ let Sisyphus = new Phaser.Class({
 
   create: function () {
 
-    let strings = [
-      "123456789 ",
-      "123456789 ",
-    ];
-
     this.cameras.main.setBackgroundColor('#aaf');
 
     this.gameIsOver = false;
@@ -85,7 +80,40 @@ let Sisyphus = new Phaser.Class({
     this.failureText.setOrigin(0);
     this.failureText.angle = -45;
 
-    this.typingInput = new TypingInput(this,strings,0x915C00);
+    this.createTypingInput();
+  },
+
+  createTypingInput: function () {
+    let strings = ['NO STRINGS ASSIGNED'];
+    let minWPM;
+
+    switch (difficulty) {
+      case 'beginner':
+      minWPM = 30;
+      let grammar = tracery.createGrammar({
+        'adverb': ['slowly','steadily','gradually','painfully','resignedly','wearily','tiredly','relentlessly','eternally','infinitely'],
+        'push': ['push','shove','roll','move','work','force','strain','thrust','propel','impel','advance','drive','shift','muscle'],
+        'rock': ['rock','boulder','stone','burden','weight','mass','hardship','load'],
+        'hill': ['hill','slope','incline','ramp','diagonal','rise','ascent','gradient'],
+        'origin':['#adverb.capitalize# #push# the #rock# up the #hill#. '],
+      });
+
+      strings = [];
+      for (let i = 0; i < 10; i++) {
+        strings.push(grammar.flatten('#origin#'));
+      }
+      break;
+
+      case 'intermediate':
+      minWPM = 75;
+      break;
+
+      case 'advanced':
+      minWPM = 100;
+      break;
+    }
+
+    this.typingInput = new TypingInput(this,strings,minWPM,0x915C00);
     this.typingInput.create();
   },
 

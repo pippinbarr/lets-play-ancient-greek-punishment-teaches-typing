@@ -1,11 +1,11 @@
 let TypingInput = new Phaser.Class({
 
-  initialize: function TypingInput (parent,strings,cursorColor) {
+  initialize: function TypingInput (parent,strings,minWPM,cursorColor) {
     console.log('TypingInput()');
 
     this.scene = parent;
     this.wpm = 0;
-    this.MIN_WPM = 30;
+    this.minWPM = minWPM;
     this.WORD_LENGTH = 6; // Actually it's 5 + a space/punctuation character
 
     this.strings = strings;
@@ -80,7 +80,7 @@ let TypingInput = new Phaser.Class({
 
       this.texts.forEach(function (text,index) {
         if (text.x + text.width < 0) {
-          let nextTextIndex = (index + this.strings[index].length - 1) % this.strings.length;
+          let nextTextIndex = (index + this.strings.length - 1) % this.strings.length;
           let nextText = this.texts[nextTextIndex];
           text.x = nextText.x + nextText.width;
         }
@@ -94,7 +94,7 @@ let TypingInput = new Phaser.Class({
   },
 
   success: function () {
-    return (this.wpm >= this.MIN_WPM);
+    return (this.wpm >= this.minWPM);
   },
 
   update: function (time,delta) {
