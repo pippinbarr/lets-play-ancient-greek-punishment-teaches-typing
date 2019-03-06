@@ -15,9 +15,11 @@
 - ~~Consider issue of difficulty levels to give appropriate challenge (any bonus to doing the harder levels? Safety instructions thing? of different texts? Too exhausting to think about? Perhaps not? Repetition > Narrative > Markov?)~~
 - ~~What is the text going to be???~~
 - ~~Implement beginner text with Tracery of fundamentally describing the action (simple words)~~
+- ~~Implement intermediate text with "writing lines" flavour referring to the actions that brough the character to Hades~~
+- ~~__DID A VERSION WITH CAMUS FOR NOW__ Implement advanced text with Markov chain drawing on existing texts about the character (and perhaps other stuff too where plausible? This one still needs a bit of thought, but I think can be surreal and weird. Alternatively this could be a monologue somehow.)~~
 
-- Implement intermediate text with "writing lines" flavour referring to the actions that brough the character to Hades
-- Implement advanced text with Markov chain drawing on existing texts about the character (and perhaps other stuff too where plausible? This one still needs a bit of thought, but I think can be surreal and weird. Alternatively this could be a monologue somehow.)
+- Sit back and contemplate your texts
+- Maybe transition the beginner text to literally repeating a single word or phrase?
 
 # Prometheus
 
@@ -28,5 +30,7 @@
 # Zeno
 
 # Mobile?
+
+- Fuck no?
 
 # Bugs

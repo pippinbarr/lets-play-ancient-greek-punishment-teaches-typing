@@ -48,15 +48,15 @@ let TypingInput = new Phaser.Class({
     let totalChars = 0;
     let x = 100;
     for (let i = 0; i < this.strings.length; i++) {
-      let text = this.scene.add.text(x,10,this.strings[i],inputStyle);
+      let text = this.scene.add.text(x,10,this.strings[i] + ' ',inputStyle);
       text.setOrigin(0);
       this.texts.push(text);
       totalWidth += text.width;
-      totalChars += this.strings[i].length;
+      totalChars += this.strings[i].length + 1;
       x += text.width;
     }
     this.CHAR_WIDTH = totalWidth / totalChars;
-    console.log(totalWidth,totalChars,this.CHAR_WIDTH)
+    // console.log(totalWidth,totalChars,this.CHAR_WIDTH)
 
     // Add WPM text
     let wpmStyle = { fontFamily: 'Commodore', fontSize: '24px', fill: '#fff', wordWrap: true, align: 'center' };
