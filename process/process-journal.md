@@ -85,6 +85,8 @@ To make this work I need to
 
 So at this point I've implemented a fairly playable version of Sisyphus in which you can type the words, they scroll by (infinitely), your WPM is recorded, and if it've above a threshold then the animation moves forward, if not you stop or lose your place.
 
+![](images/early-sisyphus.png)
+
 ## The texts? The difficulty levels?
 
 Most obviously absent from this version is the text itself. Which is true for all the levels. And it's really does seem like this is the key 'design' question to be addressed here in a way. There's no major need to design the typing interface because we're just taking 'best practice' from Mavis Beacon.
@@ -135,3 +137,22 @@ Another option would be that the "selected" text alternates on its own and only 
 Another option would be that a text only really starts scrolling if you type three or more characters in a row correctly? This would be a bit arbitrary but would at least allow you to type the one you intended a bit more intelligently. Maybe during that initial phase before it's "chosen" it highlights the characters and then, once you've locked into one, it starts the scrolling, but then subsides if you hit 0 WPM and reperforms the trick. It's still extra UI but it might make sense.
 
 So there's a definite issue here and a decision has to be made. Those are the solutions I can imagine for now.
+
+---
+
+# More text thoughts (Wednesday, 6 March 2019, 13:28PM)
+
+Spoke to my programming class about the project yesterday to solicit some thoughts from them on what kinds of text there could be. Main suggestions:
+
+- Some kind of __internal monologue__. Allows a kind of access to the experience of the situation, also potentially a greater range of ideas and tangents, brings the player closer to the character perhaps.
+- Something __factual__, reporting on the myth itself from something like Wikipedia or similar. A distanced perspective. A punishment for the player because it's boring/dry?
+- Something __about the things the character is being punished for__ rather than the punishment. Hadn't really thought of this. Sisyphus is being punished because he plotted to kill his brother, perhaps killed his guests, etc. So this would be a way of reliving the crimes committed that led to the punishment meted out.
+- A form could be like the __punishment lines written out on a blackboard__. "I will not seduce my niece. I will not murder travellers. I will not plot the murder of my brother." Etc. Could be a funny option for the middle difficulty. Has an infinity built into it. Kind of weird/amusing to have to write something like this for Zeno, who isn't technically one of the myths.
+
+Seems to me that the punishment on the blackboard is funny for either the basic version or the medium. The most basic version could perhaps be fairly literal instructions (maybe with Tracery) concerning performing the action involved. "Push the boulder. Push the rock. Push.". Then the middle one can be punishment on the blackboard with reference to history. The hard one can be... well I don't know, maybe that's an opportunity for Markov chaining surreality?
+
+In which case I'm a little bit ready to produce a proper Sisyphus I suppose.
+
+Plus I suppose I have to think about menu systems in light of needing to to select difficulties. Shouldn't be so hard though.
+
+Hades hades hades.
