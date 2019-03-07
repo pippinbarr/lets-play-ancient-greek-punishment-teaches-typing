@@ -92,11 +92,8 @@ let Sisyphus = new Phaser.Class({
       case 'beginner':
       minWPM = 40;
       grammar = tracery.createGrammar({
-        'adverb': ['slowly','steadily','gradually','painfully','resignedly','wearily','tiredly','relentlessly','eternally','infinitely'],
-        'push': ['push','shove','roll','move','work','force','strain','thrust','propel','impel','advance','drive','shift','muscle'],
-        'rock': ['rock','boulder','stone','burden','weight','mass','hardship','load'],
-        'hill': ['hill','slope','incline','ramp','diagonal','rise','ascent','gradient'],
-        'origin':['#adverb.capitalize# #push# the #rock# up the #hill#.'],
+        'push': ['push','shove','roll'],
+        'origin':['#push# #push# #push# #push# #push# #push# #push# #push# #push# #push# #push#'],
       });
 
       strings = [];
