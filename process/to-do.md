@@ -20,9 +20,11 @@
 - ~~Sit back and contemplate your texts~~
 - ~~__I WILL__ Maybe transition the beginner text to literally repeating a single word or phrase?~~
 - ~~Change beginner to single words, verbs in strings~~
+- ~~__IT FEELS QUITE GOOD__ Change advanced to "Hill" and see how it feels to type it in (will need to clean up the text etc.)~~
 
-- Change advanced to "Mountaineering" and see how it feels to type it in (will need to clean up the text etc.)
 - Add SFX
+- Consider the feedback around mistyping and around when the game is autopiloting (boulder rolling back down the hill)
+- Show to J+M and Rilla
 
 # Prometheus
 
@@ -36,8 +38,8 @@
 
 # Mobile?
 
-- Fuck no?
+- ~~Fuck no?~~
 
 # Bugs
 
-- Highlighting the wrong fucking letter!
+- ~~Highlighting the wrong fucking letter!~~
