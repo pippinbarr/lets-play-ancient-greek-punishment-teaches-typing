@@ -180,3 +180,19 @@ So you can see I have some concerns. But I also have relatively okay solutions?
 - __Nightmare__ could be being Albert Camus writing the Myth of Sisyphus. Maybe you write the whole thing out, and then the page blows away, or it gets stolen, or burned, and so you have to start again? I mean, yeah that's fucking good. And then it could be greyed out at the bottom of the screen until you've tried all levels at beginner or something? Oh yeah. This is a thing. This is a happening thing. Or maybe you have to play Sisyphus as all three levels to unlock Camus. Ah that's fun.
 
 Okay, this was a good talk we had you and I.
+
+---
+
+# Sisyphus's advanced text? Mountaineering? (Thursday, 7 March 2019, 11:22AM)
+
+Just sat down with Sisyphus and changed his beginner text (now it's just like push roll shove shove roll roll shove push push etc.).
+
+Then I was going to "just do" his advanced text, but ran into various issues that I discussed with Rilla and just want to list here so I have a record of the thinking process.
+
+- If it's going to be Markoved then I need a significant body of text, and would need to be okay with some nonsense-y stuff, which I'm not 100% sure I am. Markov could work if I had something like an entire novel about mountain-climbing or something. But even then it wouldn't be so ideal because many/most of the sentences produced wouldn't necessary lock into the core ideas.
+- This makes me think non-Markov might be better, but if non-Markov then I run into the issue (if it is one) of a potentially non-infinite text. If it's, say, a Wikipedia entry on mountains, then that's linear and has an end. The obvious thing is that you reach the end and begin typing it out again, and it's possible that's fine (and it's possible nobody would ever type the whole stupid thing in and so the problem would never be encountered - but that's not how we roll).
+- The point of the text (going with the ideas for the other characters) has been some kind of technical/factual text about the object of obsession/torment I suppose. Or alternatively the goal. If obsession/torment then the boulder becomes plauisble as a topic of interest. If the goal, then I guess something like "successful mountain ascents" is a thing. Wikipedia has the stats on successful ascents of Everest for instance, so you could imagine doing something with that? Stats on successful ascents of the big seven mountains or something? Very, very dry texts that would be, and maybe not as interesting to type.
+- A text on Everest or some other mountain as symbolic of Sisyphus's task, referencing the idea of people using Everest as a metaphor for a difficult or quasi-impossible task? Everest has a very substantial Wikipedia entry for the record. Is it kind of too specific to a particular mountain though?
+- Mountain Climbing as an idea? Because mountain climbing is about reaching the top? "Mountaineering" has a major entry in Wikipedia.
+- Think we're getting somewhere. Maybe I start with Mountaineering and see how that feels.
+- (Note this is mostly "just" problematic for Sisyphus - I think I have some good leads for the others.)

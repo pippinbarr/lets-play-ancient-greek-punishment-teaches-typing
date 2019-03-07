@@ -21,7 +21,7 @@
 - ~~__I WILL__ Maybe transition the beginner text to literally repeating a single word or phrase?~~
 - ~~Change beginner to single words, verbs in strings~~
 
-- Change advanced to a Wikipedia? or other entry about Sisyphus's objective (hills? hilltops? Mesas? Flatness?)
+- Change advanced to "Mountaineering" and see how it feels to type it in (will need to clean up the text etc.)
 - Add SFX
 
 # Prometheus
@@ -39,3 +39,5 @@
 - Fuck no?
 
 # Bugs
+
+- Highlighting the wrong fucking letter!
