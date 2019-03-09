@@ -16,6 +16,8 @@ let Preloader = new Phaser.Class({
     this.load.audio('swoopup', ['assets/sounds/swoopup.mp3','assets/sounds/swoopup.ogg']);
     this.load.audio('swoopdown', ['assets/sounds/swoopdown.mp3','assets/sounds/swoopdown.ogg']);
     this.load.audio('victory', ['assets/sounds/victory.mp3','assets/sounds/victory.ogg']);
+    this.load.audio('key-bad', ['assets/sounds/key-bad.wav']);
+    this.load.audio('key-good', ['assets/sounds/key-good.wav']);
   },
 
   create: function () {

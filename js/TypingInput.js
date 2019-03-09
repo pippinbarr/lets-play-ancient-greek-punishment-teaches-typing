@@ -1,7 +1,6 @@
 let TypingInput = new Phaser.Class({
 
-  initialize: function TypingInput (parent,strings,minWPM,cursorColor) {
-    console.log('TypingInput()');
+  initialize: function TypingInput (parent,strings,minWPM,cursorColor,goodKeySFX,badKeySFX) {
 
     this.scene = parent;
     this.wpm = 0;
@@ -15,6 +14,9 @@ let TypingInput = new Phaser.Class({
     this.texts = [
 
     ];
+
+    this.goodKeySFX = goodKeySFX;
+    this.badKeySFX = badKeySFX;
   },
 
   create: function () {
@@ -69,6 +71,7 @@ let TypingInput = new Phaser.Class({
       // Correct
       this.typingIndex = (this.typingIndex + 1) % this.strings[this.currentText].length;
       this.charsTyped++;
+      this.goodKeySFX.play();
 
       if (this.typingIndex === 0) {
         this.currentText = (this.currentText + 1) % this.strings.length;
@@ -88,7 +91,7 @@ let TypingInput = new Phaser.Class({
     }
     else {
       if (event.key !== 'Shift') {
-        // Incorrect
+        this.badKeySFX.play();
       }
     }
   },
@@ -101,6 +104,21 @@ let TypingInput = new Phaser.Class({
 
     if (this.gameIsOver) return;
 
+  },
+
+  disable: function () {
+    this.enabled = false;
+    this.texts.forEach(function (text) {
+      text.alpha = 0.4;
+    });
+
+  },
+
+  enable: function () {
+    this.enabled = true;
+    this.texts.forEach(function (text) {
+      text.alpha = 1;
+    });
   }
 
 });

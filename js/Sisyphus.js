@@ -26,6 +26,12 @@ let Sisyphus = new Phaser.Class({
     this.victorySFX.volume = 0.2;
     this.gameOverSFX = this.sound.add('swoopdown');
     this.gameOverSFX.volume = 0.2;
+    this.peckSFX = this.sound.add('peck');
+    this.peckSFX.volume = 0.2;
+    this.goodKeySFX = this.sound.add('key-good');
+    this.goodKeySFX.volume = 0.2;
+    this.badKeySFX = this.sound.add('key-bad');
+    this.badKeySFX.volume = 0.2;
 
     this.hill = this.add.sprite(this.game.canvas.width/2, this.game.canvas.height/2,'atlas','sisyphus/hill.png');
     this.hill.setScale(4,4);
@@ -51,7 +57,8 @@ let Sisyphus = new Phaser.Class({
         case 'uphill':
         if (this.sisyphus.anims.forward) {
           this.sisyphus.anims.play('downhill');
-          this.typingInput.enabled = false;
+          this.gameOverSFX.play();
+          this.typingInput.disable();
         }
         else {
           this.sisyphus.anims.forward = true;
@@ -62,11 +69,13 @@ let Sisyphus = new Phaser.Class({
 
         case 'downhill':
         this.typingInput.enabled = true;
+        this.typingInput.enable();
         this.sisyphus.anims.forward = true;
         this.sisyphus.anims.play('uphill');
         this.sisyphus.anims.currentAnim.pause();
         this.failures++;
         this.failureText.text = `FAILURES: ${this.failures}`;
+        this.peckSFX.play();
         break;
       }
     },this);
@@ -142,7 +151,7 @@ let Sisyphus = new Phaser.Class({
       break;
     }
 
-    this.typingInput = new TypingInput(this,strings,minWPM,0x915C00);
+    this.typingInput = new TypingInput(this,strings,minWPM,0x915C00,this.goodKeySFX,this.badKeySFX);
     this.typingInput.create();
   },
 
