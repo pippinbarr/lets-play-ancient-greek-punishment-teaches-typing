@@ -6,6 +6,7 @@ let Menu = new Phaser.Class({
 
     initialize: function Menu () {
         Phaser.Scene.call(this, { key: 'menu' });
+        console.log("Menu()");
     },
 
     create: function () {

@@ -1,3 +1,7 @@
+let BEGINNER_WPM = 20;
+let INTERMEDIATE_WPM = 50;
+let ADVANCED_WPM = 80;
+
 let config = {
   type: Phaser.CANVAS,
   width: 800,

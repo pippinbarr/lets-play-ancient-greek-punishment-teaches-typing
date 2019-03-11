@@ -28,8 +28,8 @@ let Preloader = new Phaser.Class({
 
     this.add.sprite(this.game.canvas.width/2,this.game.canvas.height/2,'clown_logo');
 
-    // setTimeout(() => {
+    setTimeout(() => {
       this.scene.start('menu');
-    // },2000);
+    },1000);
   },
 });

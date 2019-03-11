@@ -24,14 +24,28 @@
 - ~~Consider the feedback around mistyping and around when the game is autopiloting (boulder rolling back down the hill)~~
 - ~~Add SFX~~
 - ~~Send to J+M and Rilla~~
+- ~~Lower the WPM requirements (20 for beginner, 50 for intermediate, 80 for advanced?)~~
+- ~~Remove Failures~~
 
 # Prometheus
 
+- Implement the basics
+- Add the appropriate texts
+
 # Tantalus
+
+- Implement the basics
+- Add the appropriate texts
 
 # Danaids
 
+- Implement the basics
+- Add the appropriate texts
+
 # Zeno
+
+- Implement the basics
+- Add the appropriate texts
 
 # Camus
 
@@ -42,3 +56,5 @@
 # Bugs
 
 - ~~Highlighting the wrong fucking letter!~~
+
+- Doesn't run in Firefox???

@@ -74,7 +74,7 @@ let Sisyphus = new Phaser.Class({
         this.sisyphus.anims.play('uphill');
         this.sisyphus.anims.currentAnim.pause();
         this.failures++;
-        this.failureText.text = `FAILURES: ${this.failures}`;
+        // this.failureText.text = `FAILURES: ${this.failures}`;
         this.peckSFX.play();
         break;
       }
@@ -83,11 +83,11 @@ let Sisyphus = new Phaser.Class({
     this.defaultFrameTime = this.sisyphus.anims.currentAnim.msPerFrame;
 
     // Add FAILURES text
-    let failureStyle = { fontFamily: 'Commodore', fontSize: '30px', fill: '#fff', wordWrap: true, align: 'center' };
-    let failureString = "FAILURES: 0";
-    this.failureText = this.add.text(420,340,failureString,failureStyle);
-    this.failureText.setOrigin(0);
-    this.failureText.angle = -45;
+    // let failureStyle = { fontFamily: 'Commodore', fontSize: '30px', fill: '#fff', wordWrap: true, align: 'center' };
+    // let failureString = "FAILURES: 0";
+    // this.failureText = this.add.text(420,340,failureString,failureStyle);
+    // this.failureText.setOrigin(0);
+    // this.failureText.angle = -45;
 
     this.createTypingInput();
   },
@@ -99,7 +99,7 @@ let Sisyphus = new Phaser.Class({
 
     switch (difficulty) {
       case 'beginner':
-      minWPM = 40;
+      minWPM = BEGINNER_WPM;
       grammar = tracery.createGrammar({
         'push': ['push','shove','roll'],
         'origin':['#push# #push# #push# #push# #push# #push# #push# #push# #push# #push# #push#'],
@@ -112,7 +112,7 @@ let Sisyphus = new Phaser.Class({
       break;
 
       case 'intermediate':
-      minWPM = 70;
+      minWPM = INTERMEDIATE_WPM;
       grammar = tracery.createGrammar({
         'kill': ['kill','murder'],
         'people': ['travellers','guests','visitors'],
@@ -144,7 +144,7 @@ let Sisyphus = new Phaser.Class({
       break;
 
       case 'advanced':
-      minWPM = 100;
+      minWPM = ADVANCED_WPM;
       // let markov = new RiMarkov(2);
       // markov.loadText(camus);
       strings = hill;
