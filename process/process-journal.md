@@ -227,3 +227,21 @@ So there's this idea of a special mode unlocked by playing Sisyphus where you ge
 - If you make a mistake he should tear the paper out of the typewriter and throw it away? How do you indicate it's a failure?
 - Definitely need a little arm raise celebration when he finishes!
 - Quite probably to solve the 'what does it look like on failure I'll need to draw it up a bit eh
+
+---
+
+# Camus sketch (Monday, 11 March 2019, 15:18PM)
+
+![](images/camus-sketch.png)
+
+Spent a tiny bit of time mocking this up and it allowed me to think through how a bunch of things might look. It's kind of important not to get too caught up in fancy animations given the tiny number of people who will bother with this so my thought is
+
+- Hands move while typing, typing sounds
+- At a certain word count (300 or so) you get a "page complete!" notification, and the pile of pages to the right of the typewriter increases (but this wouldn't be every time because they're so thick). In fact there can just be a "pages written" bit somewhere to deal with that. So long as the player realises they are accumulating pages.
+- When there's a mistake the bad sound plays and then the stack of paper is shifted to the trash, which can literally be tweening stuff I think, and making sure the trash can hide/take any size of paper
+- When there's a mistake I guess you need to "add" the most recent page to the pile? Nah, probably not, unless there's only one page (they haven't finished a page) in which case we should add one to the pile first, then trash it.
+- And that's it
+- Plus the victory arms if he finishes
+- The swoop down as the pages go into the trash, and then the text resets for you to start all over again
+
+I think that'll work.
