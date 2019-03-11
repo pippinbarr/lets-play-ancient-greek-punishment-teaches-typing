@@ -49,6 +49,9 @@
 
 # Camus
 
+- Sketch Camus scene
+- Think about failure animation
+
 # Mobile?
 
 - ~~Fuck no?~~

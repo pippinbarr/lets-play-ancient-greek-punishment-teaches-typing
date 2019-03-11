@@ -196,3 +196,34 @@ Then I was going to "just do" his advanced text, but ran into various issues tha
 - Mountain Climbing as an idea? Because mountain climbing is about reaching the top? "Mountaineering" has a major entry in Wikipedia.
 - Think we're getting somewhere. Maybe I start with Mountaineering and see how that feels.
 - (Note this is mostly "just" problematic for Sisyphus - I think I have some good leads for the others.)
+
+---
+
+# Post-Sisyphus, How Do You Do Camus? (Monday, 11 March 2019, 14:33PM)
+
+## Post-Sisyphus
+
+At this stage I have what I think is a fully implemented Sisyphus barring some tweaks here and there. And thus I have kind of the model for the other levels, all of which have exactly the same mechanics as Sisyphus and so 'just' need to be put together in the same way.
+
+In the end with Sisyphus I went with "hill" as the kind of object he's obsessed with. The only issue with it (and with this idea in general) is the non-infinite nature of the text in question. So that when you finish the text it will just cycle around. Which I suppose is fine in the end, but just has this very slight catch of not being clever enough? Even though there's a very real sense in which it's totally representative of the punishment - you 'finish' the task only to find that the task must be repeated anyway.
+
+Anyway this leaves me with a straight shot for the rest of them except...
+
+## How Do You Do Camus?
+
+So there's this idea of a special mode unlocked by playing Sisyphus where you get a Camus mode. In that mode it would be something like
+
+- Scene of Camus (the usual representation of a character from this world) sitting at a typewriter (I guess it has to be side-on)
+- The text to type at the top is just Camus's essay The Myth of Sisyphus
+- There is the sound of typing as you type obviously, and some kind of simple animation if it makes sense
+- In terms of endings you either:
+  - Type in the full essay and it begins again (kind of boring)
+  - Type but whenever you make a mistake the whole thing gets reset (kind of funny to literally blame it on the player - could overlay the incorrect character so it's clear that you fucked it up?)
+  - Type but at some point there's an actual mistake in the text you're supposed to type, which you then type in because you have to, but which causes failure
+- In the two 'failed' cases we need some way to indicate that the mistake (or 'mistake') requires Camus to start the essay over from the beginning (and note that in the case where the play can make a mistake of their own you'd still need to account for a perfect run, in which case they win? or it just repeats?)
+- Does it need to be on a typewriter? I guess it does for the sense of permanence
+- If it's the user-error then it seems like it would be pretty funny to let them "win", but perhaps to introduce a minimum WPM they have to type the whole text in (100WPM say). So it's possible to do it but incredibly hard? Or even just 80? Or perhaps no need for a limit like that actually.
+- Okay I'm sold on the user-error one. So you have to type the entire essay perfectly, but at whatever speed you like. And if you finish you win.
+- If you make a mistake he should tear the paper out of the typewriter and throw it away? How do you indicate it's a failure?
+- Definitely need a little arm raise celebration when he finishes!
+- Quite probably to solve the 'what does it look like on failure I'll need to draw it up a bit eh
