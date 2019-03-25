@@ -44,8 +44,11 @@
 
 # Zeno
 
-- Implement the basics
-- Add the appropriate texts
+- ~~Implement the basics~~
+- ~~Add the appropriate texts~~
+
+- Add changing half-way texts (including "half-way and almost half-way" or whatever it is when it loses precision)
+- Add "Half way there!" encouragement
 
 # Camus
 

@@ -3,6 +3,7 @@ let TypingInput = new Phaser.Class({
   initialize: function TypingInput (parent,input,minWPM,cursorColor,goodKeySFX,badKeySFX) {
 
     this.scene = parent;
+    this.enabled = true;
     this.wpm = 0;
     this.minWPM = minWPM;
     this.WORD_LENGTH = 6; // Actually it's 5 + a space/punctuation character
@@ -107,7 +108,7 @@ let TypingInput = new Phaser.Class({
   },
 
   success: function () {
-    return (this.wpm >= this.minWPM);
+    return (this.enabled && this.wpm >= this.minWPM);
   },
 
   update: function (time,delta) {
