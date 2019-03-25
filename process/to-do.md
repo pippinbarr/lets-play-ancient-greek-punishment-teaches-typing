@@ -29,8 +29,8 @@
 
 # Prometheus
 
-- Implement the basics
-- Add the appropriate texts
+- ~~Implement the basics~~
+- ~~Add the appropriate texts~~
 
 # Tantalus
 
@@ -59,5 +59,4 @@
 # Bugs
 
 - ~~Highlighting the wrong fucking letter!~~
-
-- Doesn't run in Firefox???
+- ~~__SEEMS LIKE INCLUDING THE PRELOADER SCREEN FIXES IT?__ Doesn't run in Firefox???~~

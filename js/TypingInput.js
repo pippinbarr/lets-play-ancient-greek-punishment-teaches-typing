@@ -1,12 +1,22 @@
 let TypingInput = new Phaser.Class({
 
-  initialize: function TypingInput (parent,strings,minWPM,cursorColor,goodKeySFX,badKeySFX) {
+  initialize: function TypingInput (parent,input,minWPM,cursorColor,goodKeySFX,badKeySFX) {
 
     this.scene = parent;
     this.wpm = 0;
     this.minWPM = minWPM;
     this.WORD_LENGTH = 6; // Actually it's 5 + a space/punctuation character
 
+    let strings = [];
+    if (input.origin !== undefined) {
+      let grammar = tracery.createGrammar(input);
+      for (let i = 0; i < 10; i++) {
+        strings.push(grammar.flatten('#origin# '));
+      }
+    }
+    else {
+      strings = input;
+    }
     this.strings = strings;
     this.typingIndex = 0;
 
