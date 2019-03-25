@@ -245,3 +245,13 @@ Spent a tiny bit of time mocking this up and it allowed me to think through how 
 - The swoop down as the pages go into the trash, and then the text resets for you to start all over again
 
 I think that'll work.
+
+---
+
+# Prometheus and Zeno and the future (Monday, 25 March 2019, 17:30PM)
+
+Post Sisyphus I went ahead and did Prometheus. His advanced text is about Escapology which I quite enjoy. And Zeno is underway without too much trouble, with an advanced text about Geometric Series (aka a potential mathematical refutation of his Paradox, oh the irony). Basically the game is pretty satisfying at this point and the differentiation between the three levels works really well in my opinion, definitely well enough. Maybe the only vague sticking point is just the current default action of repeating the advanced text after it ends which isn't quiiiiiite perfectly satisfying, though I think I'd arguing it's totally good enough (not least because I'm going to go ahead and assume zero people will type a full advanced text into the game). Plus at a fundamental level the text repeating is just like the punishment. I guess I'm just saying I wish I had some next-level interactive joke to handle that scenario? Maybe there is one and maybe I'll think of it.
+
+Overall it's progressing smoothly, and I feel like I'm using Phaser better than ever (tweens have become a major thing along with use of callbacks to facilitate much smoother code). No problems foreseen with Zeno nor any of the others and just Camus as brand new code to write at some point. Once it's done it's done. Very very outside chance I could finish this month? Potentially I  could finish the game but release in April? Something like that. And: whatever. I could probably finish and release two or three in April in that case?
+
+This is kind of boring for "process", but it's just going fine and this is definitely one of the least redesign-y versions of the game, so it's not surprising there aren't buckets of design insight.
