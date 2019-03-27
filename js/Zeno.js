@@ -7,13 +7,23 @@ let Zeno = new Phaser.Class({
 
     this.SPECIAL_START_TEXT = "ALMOST\nHALF-WAY";
     this.SPECIAL_HALFWAY_TEXT = "HALF-WAY";
-    this.ZENO_SPEED = 0.25;
+    this.speed = 1;
+    this.animSpeed = 100;
     this.ZENO_START_X = 16*4;
     this.ZENO_HALFWAY_X = 95*4;
     this.ZENO_FINISH_X = this.ZENO_HALFWAY_X + (this.ZENO_HALFWAY_X - this.ZENO_START_X);
   },
 
   create: function () {
+
+    // let test = 50;
+    // let count = 0.25;
+    // while (test < 100) {
+    //   console.log(count);
+    //   test += (100 - test)/2;
+    //   count += 0.25;
+    // }
+    // console.log(count);
 
     this.cameras.main.setBackgroundColor('#dad');
 
@@ -67,6 +77,8 @@ let Zeno = new Phaser.Class({
                 this.halfWayText.text = `${this.SPECIAL_HALFWAY_TEXT}`;
               }
               else {
+                this.speed++;
+                this.animSpeed = 100 / this.speed;
                 this.startText.text = this.halfWayText.text;
                 this.halfWayText.text = `${this.halfway}m`;
               }
@@ -148,9 +160,10 @@ let Zeno = new Phaser.Class({
     }
     else if (this.typingInput.success()) {
       if (this.zeno.anims.currentAnim.key === 'zeno_idle') {
+        this.anims.get('zeno_running').msPerFrame = this.animSpeed;
         this.zeno.anims.play('zeno_running');
       }
-      this.zeno.x += this.ZENO_SPEED;
+      this.zeno.x += this.speed;
     }
     else if (this.typingInput.enabled) {
       this.zeno.anims.play('zeno_idle');

@@ -48,8 +48,7 @@
 - ~~Add the appropriate texts~~
 - ~~Add changing half-way texts (including "half-way and almost half-way" or whatever it is when it loses precision)~~
 - ~~Add "Half way there!" encouragement~~
-
-Increase movement and animation speed with decreased distances
+- ~~Increase movement and animation speed with decreased distances~~
 
 # Camus
 
