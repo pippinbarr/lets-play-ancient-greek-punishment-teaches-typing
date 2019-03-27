@@ -5,12 +5,16 @@ let Zeno = new Phaser.Class({
   initialize: function Zeno () {
     Phaser.Scene.call(this, { key: 'zeno' });
 
-    this.ZENO_SPEED = 10;//0.2;
+    this.SPECIAL_START_TEXT = "ALMOST\nHALF-WAY";
+    this.SPECIAL_HALFWAY_TEXT = "HALF-WAY";
+    this.ZENO_SPEED = 0.25;
     this.ZENO_START_X = 16*4;
-    this.ZENO_HALFWAY_X = 88*4;
+    this.ZENO_HALFWAY_X = 95*4;
+    this.ZENO_FINISH_X = this.ZENO_HALFWAY_X + (this.ZENO_HALFWAY_X - this.ZENO_START_X);
   },
 
   create: function () {
+
     this.cameras.main.setBackgroundColor('#dad');
 
     // Sound
@@ -25,8 +29,9 @@ let Zeno = new Phaser.Class({
 
     this.zeno = this.add.sprite(this.ZENO_START_X, this.game.canvas.height/2 + 4*15, 'atlas', 'zeno/zeno/zeno_1.png');
     this.zeno.setScale(4,4);
+    this.zeno.setOrigin(0.5);
 
-    this.flag = this.add.sprite(this.game.canvas.width - 4*18, this.game.canvas.height/2 + 4*10, 'atlas', 'zeno/flag.png');
+    this.flag = this.add.sprite(this.ZENO_FINISH_X, this.game.canvas.height/2 + 4*10, 'atlas', 'zeno/flag.png');
     this.flag.setScale(4,4);
 
     let groundRect = new Phaser.Geom.Rectangle(0, this.game.canvas.height/2 + 4*26, this.game.canvas.width, 200);
@@ -39,19 +44,39 @@ let Zeno = new Phaser.Class({
     this.createAnimation('zeno_victory',4,8,5,0);
     this.createAnimation('zeno_defeat',8,4,5,0);
 
-    // this.zeno.anims.play('zeno_idle');
-    // this.zeno.anims.play('zeno_running');
+    this.zeno.anims.play('zeno_idle');
 
     this.zeno.on('animationcomplete', (animation,frame) => {
       switch(animation.key) {
         case 'zeno_victory':
+        this.startText.visible = false;
         let zenoTweenBack = this.tweens.add({
-          targets: this.zeno,
+          targets: [this.zeno,this.halfWayText],
           x: this.ZENO_START_X,
           duration: 1000,
           repeat: 0,
           onComplete: () => {
-            this.zeno.anims.play('zeno_defeat');
+            this.startText.visible = true;
+            if (this.startText.text === this.SPECIAL_START_TEXT)  {
+
+            }
+            else  {
+              this.halfway += (100 - this.halfway)/2;
+              if (this.halfway  ===  100) {
+                this.startText.text = `${this.SPECIAL_START_TEXT}`;
+                this.halfWayText.text = `${this.SPECIAL_HALFWAY_TEXT}`;
+              }
+              else {
+                this.startText.text = this.halfWayText.text;
+                this.halfWayText.text = `${this.halfway}m`;
+              }
+            }
+            this.halfWayText.x = this.ZENO_HALFWAY_X;
+
+            setTimeout(() => {
+              this.zeno.anims.play('zeno_defeat');
+              this.defeatSFX.play();
+            },1000);
           },
         });
 
@@ -59,18 +84,24 @@ let Zeno = new Phaser.Class({
         case 'zeno_defeat':
         this.typingInput.enable();
         this.zeno.anims.play('zeno_idle');
+        this.encouragementText.visible = false;
         break;
       }
     });
 
     this.start = 0;
-    this.halfway = 50;
+    this.halfway = 50; // This will max out at 99.99999999999999m (14dp)
     this.finish = 100;
 
+    let encouragementStyle = { fontFamily: 'Commodore', fontSize: '20px', fill: '#000', wordWrap: true, align: 'center' };
+    this.encouragementText = this.add.text(this.game.canvas.width/2, 40*4, "HALF-WAY THERE!", encouragementStyle);
+    this.encouragementText.setOrigin(0.5,0.5);
+    this.encouragementText.visible = false;
+
     let markerStyle = { fontFamily: 'Commodore', fontSize: '18px', fill: '#fff', wordWrap: true, align: 'left' };
-    this.startText = this.add.text(15*4, 82*4, "0m", markerStyle);
-    this.halfWayText = this.add.text(95*4, 82*4, "50m", markerStyle);
-    this.finishText = this.add.text(180*4, 82*4, "100m", markerStyle);
+    this.startText = this.add.text(this.ZENO_START_X, 82*4, `${this.start}m`, markerStyle);//.setOrigin(0.5);
+    this.halfWayText = this.add.text(this.ZENO_HALFWAY_X, 82*4, `${this.halfway}m`, markerStyle);//.setOrigin(0.5);
+    this.finishText = this.add.text(this.ZENO_FINISH_X, 82*4, `${this.finish}m`, markerStyle);//.setOrigin(0.5);
 
     // Input
     this.createTypingInput();
@@ -109,8 +140,11 @@ let Zeno = new Phaser.Class({
 
   updateZeno: function () {
     if (this.typingInput.enabled && this.zeno.x >= this.ZENO_HALFWAY_X) {
+      this.zeno.x = this.ZENO_HALFWAY_X;
       this.typingInput.disable();
       this.zeno.anims.play('zeno_victory');
+      this.victorySFX.play();
+      this.encouragementText.visible = true;
     }
     else if (this.typingInput.success()) {
       if (this.zeno.anims.currentAnim.key === 'zeno_idle') {

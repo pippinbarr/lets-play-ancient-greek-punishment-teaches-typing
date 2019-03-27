@@ -204,7 +204,7 @@ let zenoIntermediateGrammar = {
   ],
   'origin': ['I will not #crime#.'],
 };
-let zenoAdvancedGrammar = [
+let zenoAdvancedStrings = [
   `In mathematics, a geometric series is a series with a constant ratio between successive terms. `,
   `For example, the series 1/2 + 1/4 + 1/8 + 1/16 + ... is is geometric, because each successive term can be obtained by multiplying the previous term by 1/2. `,
   `Geometric series are among the simplest examples of infinite series with finite sums, although not all of them have this property. `,
