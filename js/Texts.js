@@ -333,6 +333,41 @@ let danaidsAdvancedStrings = [
     `Notable artists who have represented bathing scenes: Lawrence Alma-Tadema, Pierre Bonnard, William-Adolphe Bouguereau, François Boucher, Paul Cezanne, Gustave Courbet, Lucas Cranach the Younger, Edgar Degas, Albrecht Durer, Anthony van Dyck, Roger de La Fresnaye, Paul Gauguin, Jean-Leon Gerome, Albert Gleizes, Jean-Auguste-Dominique Ingres, Ernst Ludwig Kirchner, Boris Kustodiev, Max Liebermann, Edouard Manet, Jean Metzinger, Pablo Picasso, Pierre-Auguste Renoir, Sebastiano Ricci, Zinaida Serebriakova, Joaquín Sorolla y Bastida, Domenico Tintoretto, Titian, Anders Zorn$1`,
   ];
 
+  // Tantalus
+  let tantalusAppleBeginnerGrammar = {
+    'verb': ['reach','take','eat'],
+    'origin':['#verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb#'],
+  };
+  let tantalusAppleIntermediateGrammar = {
+    'kill': ['kill','murder','assassinate'],
+    'husband': ['Lynceus', 'Proteus', 'Busiris', 'Enceladus', 'Lycus', 'Daiphron', 'Istrus', 'Chalcodon', 'Agenor', 'Chaetus', 'Diocorystes', 'Alces', 'Alcmenor', 'Hippothous', 'Euchenor', 'Hippolytus', 'Agaptolemus', 'Cercetes', 'Eurydamas', 'Aegius', 'Argius', 'Archelaus', 'Menemachus', 'Clitus', 'Sthenelus', 'Chrysippus', 'Eurylochus', 'Phantes', 'Peristhenes', 'Hermus', 'Dryas', 'Potamon', 'Cisseus', 'Lixus', 'Imbrus', 'Bromius', 'Polyctor', 'Chthonius', 'Periphas', 'Oeneus', 'Aegyptus', 'Menalces', 'Lampus', 'Idmon', 'Idas', 'Daiphron', 'Pandion', 'Arbelus', 'Hyperbius', 'Hippocorystes',],
+    'weddingnight': ['after the wedding', 'the night of the wedding ceremony', 'on my wedding night','on the night of my wedding','on the night of the wedding ceremony'],
+    'crime': [
+      '#kill# my husband #husband# #weddingnight#',
+    ],
+    'origin': ['I will not #crime#.'],
+  };
+  let tantalusAppleAdvancedStrings = [
+  ];
+
+  // Tantalus
+  let tantalusWaterBeginnerGrammar = {
+    'verb': ['stoop','bend','drink'],
+    'origin':['#verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb#'],
+  };
+  let tantalusWaterIntermediateGrammar = {
+    'kill': ['kill','murder','assassinate'],
+    'husband': ['Lynceus', 'Proteus', 'Busiris', 'Enceladus', 'Lycus', 'Daiphron', 'Istrus', 'Chalcodon', 'Agenor', 'Chaetus', 'Diocorystes', 'Alces', 'Alcmenor', 'Hippothous', 'Euchenor', 'Hippolytus', 'Agaptolemus', 'Cercetes', 'Eurydamas', 'Aegius', 'Argius', 'Archelaus', 'Menemachus', 'Clitus', 'Sthenelus', 'Chrysippus', 'Eurylochus', 'Phantes', 'Peristhenes', 'Hermus', 'Dryas', 'Potamon', 'Cisseus', 'Lixus', 'Imbrus', 'Bromius', 'Polyctor', 'Chthonius', 'Periphas', 'Oeneus', 'Aegyptus', 'Menalces', 'Lampus', 'Idmon', 'Idas', 'Daiphron', 'Pandion', 'Arbelus', 'Hyperbius', 'Hippocorystes',],
+    'weddingnight': ['after the wedding', 'the night of the wedding ceremony', 'on my wedding night','on the night of my wedding','on the night of the wedding ceremony'],
+    'crime': [
+      '#kill# my husband #husband# #weddingnight#',
+    ],
+    'origin': ['I will not #crime#.'],
+  };
+  let tantalusWaterAdvancedStrings = [
+  ];
+
+
   // Camus
   let camusStrings = [
     'The gods had condemned Sisyphus to ceaselessly rolling a rock to the top of a mountain, whence the stone would fall back of its own weight. ',

@@ -1,8 +1,10 @@
 let TypingInput = new Phaser.Class({
 
-  initialize: function TypingInput (parent,input,minWPM,cursorColor,goodKeySFX,badKeySFX) {
+  initialize: function TypingInput (parent,x,y,input,minWPM,textColor,cursorColor,goodKeySFX,badKeySFX) {
 
     this.scene = parent;
+    this.x = x;
+    this.y = y;
     this.enabled = true;
     this.wpm = 0;
     this.minWPM = minWPM;
@@ -22,6 +24,7 @@ let TypingInput = new Phaser.Class({
     this.typingIndex = 0;
 
     this.cursorColor = cursorColor;
+    this.textColor = textColor;
     this.texts = [
 
     ];
@@ -49,19 +52,19 @@ let TypingInput = new Phaser.Class({
       this.charsTyped = 0;
     },150);
 
-    let cursorRect = new Phaser.Geom.Rectangle(100,10,18,30);
+    let cursorRect = new Phaser.Geom.Rectangle(this.x,this.y,18,30);
     this.cursor = this.scene.add.graphics();
     this.cursor.fillStyle(this.cursorColor);
     this.cursor.fillRectShape(cursorRect);
 
     this.currentText = 0;
 
-    let inputStyle = { fontFamily: 'Commodore', fontSize: '24px', fill: '#000', wordWrap: true, align: 'center' };
+    let inputStyle = { fontFamily: 'Commodore', fontSize: '24px', fill: this.textColor, wordWrap: true, align: 'center' };
     let totalWidth = 0;
     let totalChars = 0;
-    let x = 100;
+    let x = this.x;
     for (let i = 0; i < this.strings.length; i++) {
-      let text = this.scene.add.text(x,10,this.strings[i],inputStyle);
+      let text = this.scene.add.text(x,this.y,this.strings[i],inputStyle);
       text.setOrigin(0);
       this.texts.push(text);
       totalWidth += text.width;

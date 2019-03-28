@@ -34,13 +34,14 @@
 
 # Tantalus
 
-- Implement the basics
+- ~~Implement the basics~~
 - Add the appropriate texts
 
 # Danaids
 
 - ~~Implement the basics~~
 - ~~Add the appropriate texts~~
+- ~~Disable typing while pouring into the bath for a comic pause~~
 
 # Zeno
 
