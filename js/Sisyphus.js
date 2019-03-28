@@ -110,8 +110,7 @@ let Sisyphus = new Phaser.Class({
       input = sisyphusAdvancedStrings;
       break;
     }
-
-    this.typingInput = new TypingInput(this,input,minWPM,0x915C00,this.goodKeySFX,this.badKeySFX);
+    this.typingInput = new TypingInput(this,100,10,input,minWPM,'#000',0x915C00,this.goodKeySFX,this.badKeySFX);
     this.typingInput.create();
   },
 

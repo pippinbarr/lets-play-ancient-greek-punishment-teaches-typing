@@ -1,7 +1,7 @@
 let TypingInput = new Phaser.Class({
 
   initialize: function TypingInput (parent,x,y,input,minWPM,textColor,cursorColor,goodKeySFX,badKeySFX) {
-
+    console.log(x,y,textColor);
     this.scene = parent;
     this.x = x;
     this.y = y;

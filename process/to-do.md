@@ -35,7 +35,10 @@
 # Tantalus
 
 - ~~Implement the basics~~
-- Add the appropriate texts
+- ~~Add the appropriate texts~~
+
+- Think about the "I will not" conflict
+- Think about the error sound problem (ever correct character for one is incorrect for the other)
 
 # Danaids
 
@@ -55,6 +58,10 @@
 
 - Sketch Camus scene
 - Think about failure animation
+
+# General
+
+- Remove all non-typeable characters from texts
 
 # Mobile?
 
