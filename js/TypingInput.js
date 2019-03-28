@@ -1,6 +1,6 @@
 let TypingInput = new Phaser.Class({
 
-  initialize: function TypingInput (parent,x,y,input,minWPM,textColor,cursorColor,goodKeySFX,badKeySFX) {
+  initialize: function TypingInput (parent,x,y,input,minWPM,textColor,cursorColor,goodKeySFX,badKeySFX,upper) {
     console.log(x,y,textColor);
     this.scene = parent;
     this.x = x;
@@ -19,6 +19,16 @@ let TypingInput = new Phaser.Class({
     }
     else {
       strings = input;
+    }
+    if (upper !== undefined)  {
+        for (let i = 0; i < strings.length; i++) {
+          if (upper) {
+            strings[i] = strings[i].toUpperCase();
+          }
+          else {
+            strings[i] = strings[i].toLowerCase();
+          }
+        }
     }
     this.strings = strings;
     this.typingIndex = 0;

@@ -452,9 +452,6 @@
             <key type="filename">images/tantalus/branch/branch_3.png</key>
             <key type="filename">images/tantalus/branch/branch_4.png</key>
             <key type="filename">images/tantalus/branch/branch_5.png</key>
-            <key type="filename">images/tantalus/drinking_fail/drinking_fail_1.png</key>
-            <key type="filename">images/tantalus/drinking_fail/drinking_fail_2.png</key>
-            <key type="filename">images/tantalus/drinking_fail/drinking_fail_3.png</key>
             <key type="filename">images/tantalus/eating_fail/eating_fail_1.png</key>
             <key type="filename">images/tantalus/eating_fail/eating_fail_2.png</key>
             <key type="filename">images/tantalus/ground.png</key>
@@ -483,29 +480,13 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">images/tantalus/drinking/drinking_1.png</key>
-            <key type="filename">images/tantalus/drinking/drinking_2.png</key>
-            <key type="filename">images/tantalus/eating/eating_1.png</key>
-            <key type="filename">images/tantalus/eating/eating_10.png</key>
-            <key type="filename">images/tantalus/eating/eating_11.png</key>
-            <key type="filename">images/tantalus/eating/eating_12.png</key>
-            <key type="filename">images/tantalus/eating/eating_13.png</key>
-            <key type="filename">images/tantalus/eating/eating_14.png</key>
-            <key type="filename">images/tantalus/eating/eating_15.png</key>
-            <key type="filename">images/tantalus/eating/eating_16.png</key>
-            <key type="filename">images/tantalus/eating/eating_17.png</key>
-            <key type="filename">images/tantalus/eating/eating_18.png</key>
-            <key type="filename">images/tantalus/eating/eating_2.png</key>
-            <key type="filename">images/tantalus/eating/eating_3.png</key>
-            <key type="filename">images/tantalus/eating/eating_4.png</key>
-            <key type="filename">images/tantalus/eating/eating_5.png</key>
-            <key type="filename">images/tantalus/eating/eating_6.png</key>
-            <key type="filename">images/tantalus/eating/eating_7.png</key>
-            <key type="filename">images/tantalus/eating/eating_8.png</key>
-            <key type="filename">images/tantalus/eating/eating_9.png</key>
             <key type="filename">images/tantalus/stooping/stooping_1.png</key>
             <key type="filename">images/tantalus/stooping/stooping_2.png</key>
             <key type="filename">images/tantalus/stooping/stooping_3.png</key>
+            <key type="filename">images/tantalus/stooping/stooping_4.png</key>
+            <key type="filename">images/tantalus/stooping/stooping_5.png</key>
+            <key type="filename">images/tantalus/stooping/stooping_6.png</key>
+            <key type="filename">images/tantalus/stooping/stooping_7.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>

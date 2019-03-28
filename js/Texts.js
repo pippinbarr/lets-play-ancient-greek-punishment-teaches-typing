@@ -358,7 +358,7 @@ let danaidsAdvancedStrings = [
       '#reveal# the #secrets# of the gods',
       '#offer# #son# as #sacrifice#',
       '#cutup# #son#',
-      '#boil# #son# #pot#',
+      '#boil# #son# in #pot#',
       '#offer# #son# as #banquet# for the gods',
       '#trick# Demeter into #eating# #son#'
     ],

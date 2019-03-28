@@ -175,7 +175,7 @@ let Tantalus = new Phaser.Class({
       break;
     }
 
-    this.typingInputApple = new TypingInput(this,100,10,input,minWPM,'#777',0xff0000,this.goodKeySFX,this.badKeySFX);
+    this.typingInputApple = new TypingInput(this,100,10,input,minWPM,'#777',0xff0000,this.goodKeySFX,this.badKeySFX,true);
     this.typingInputApple.create();
 
     switch (difficulty) {
@@ -195,7 +195,7 @@ let Tantalus = new Phaser.Class({
       break;
     }
 
-    this.typingInputWater = new TypingInput(this,100,300,input,minWPM,'#fff',0xff0000,this.goodKeySFX,this.badKeySFX);
+    this.typingInputWater = new TypingInput(this,100,300,input,minWPM,'#fff',0xff0000,this.goodKeySFX,this.badKeySFX,false);
     this.typingInputWater.create();
   },
 
