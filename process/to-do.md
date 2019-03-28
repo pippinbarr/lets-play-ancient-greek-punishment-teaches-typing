@@ -39,8 +39,8 @@
 
 # Danaids
 
-- Implement the basics
-- Add the appropriate texts
+- ~~Implement the basics~~
+- ~~Add the appropriate texts~~
 
 # Zeno
 
