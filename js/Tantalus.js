@@ -175,7 +175,7 @@ let Tantalus = new Phaser.Class({
       break;
     }
 
-    this.typingInputApple = new TypingInput(this,100,10,input,minWPM,'#777',0xff0000,this.goodKeySFX,this.badKeySFX,true);
+    this.typingInputApple = new TypingInput(this,100,10,input,minWPM,'#777',0xff0000,true,true);
     this.typingInputApple.create();
 
     switch (difficulty) {
@@ -195,8 +195,22 @@ let Tantalus = new Phaser.Class({
       break;
     }
 
-    this.typingInputWater = new TypingInput(this,100,300,input,minWPM,'#fff',0xff0000,this.goodKeySFX,this.badKeySFX,false);
+    this.typingInputWater = new TypingInput(this,100,300,input,minWPM,'#fff',0xff0000,true,false);
     this.typingInputWater.create();
+
+    this.input.keyboard.on('keydown', function (event) {
+      let appleCorrect = this.typingInputApple.isNextKey(event.key);
+      let waterCorrect = this.typingInputWater.isNextKey(event.key);
+
+      if (appleCorrect) this.typingInputApple.handleInput(event.key);
+      if (waterCorrect) this.typingInputWater.handleInput(event.key);
+
+      if (!waterCorrect && !appleCorrect && event.key != 'Shift') {
+        console.log("Bad.")
+        this.badKeySFX.play();
+      }
+    },this);
+
   },
 
   update: function (time,delta) {

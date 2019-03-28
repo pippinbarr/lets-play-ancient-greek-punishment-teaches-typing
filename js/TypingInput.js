@@ -1,6 +1,6 @@
 let TypingInput = new Phaser.Class({
 
-  initialize: function TypingInput (parent,x,y,input,minWPM,textColor,cursorColor,goodKeySFX,badKeySFX,upper) {
+  initialize: function TypingInput (parent,x,y,input,minWPM,textColor,cursorColor,customEvent,upper) {
     console.log(x,y,textColor);
     this.scene = parent;
     this.x = x;
@@ -9,6 +9,8 @@ let TypingInput = new Phaser.Class({
     this.wpm = 0;
     this.minWPM = minWPM;
     this.WORD_LENGTH = 6; // Actually it's 5 + a space/punctuation character
+
+    this.customEvent = customEvent;
 
     let strings = [];
     if (input.origin !== undefined) {
@@ -21,14 +23,14 @@ let TypingInput = new Phaser.Class({
       strings = input;
     }
     if (upper !== undefined)  {
-        for (let i = 0; i < strings.length; i++) {
-          if (upper) {
-            strings[i] = strings[i].toUpperCase();
-          }
-          else {
-            strings[i] = strings[i].toLowerCase();
-          }
+      for (let i = 0; i < strings.length; i++) {
+        if (upper) {
+          strings[i] = strings[i].toUpperCase();
         }
+        else {
+          strings[i] = strings[i].toLowerCase();
+        }
+      }
     }
     this.strings = strings;
     this.typingIndex = 0;
@@ -39,14 +41,19 @@ let TypingInput = new Phaser.Class({
 
     ];
 
-    this.goodKeySFX = goodKeySFX;
-    this.badKeySFX = badKeySFX;
+    this.goodKeySFX = parent.sound.add('key-good');
+    this.goodKeySFX.volume = 0.2;
+    this.badKeySFX = parent.sound.add('key-bad');
+    this.badKeySFX.volume = 0.2;
+
   },
 
   create: function () {
-    this.scene.input.keyboard.on('keydown', function (event) {
-      if (this.enabled) this.handleInput(event);
-    },this);
+    if (this.customEvent === undefined) {
+      this.scene.input.keyboard.on('keydown', function (event) {
+        if (this.enabled) this.handleInput(event.key);
+      },this);
+    }
 
     this.enabled = true;
     this.wpms = [];
@@ -90,8 +97,15 @@ let TypingInput = new Phaser.Class({
     this.wpmText.setOrigin(0);
   },
 
-  handleInput: function (event) {
-    if (event.key === this.strings[this.currentText].charAt(this.typingIndex)) {
+  isNextKey: function (key) {
+    return (key === this.strings[this.currentText].charAt(this.typingIndex));
+  },
+
+  handleInput: function (key) {
+    console.log(key,this.strings[this.currentText].charAt(this.typingIndex),this.isNextKey(key));
+    if (this.isNextKey(key)) {
+      console.log(key)
+
       // Correct
       this.typingIndex = (this.typingIndex + 1) % this.strings[this.currentText].length;
       this.charsTyped++;
@@ -114,7 +128,7 @@ let TypingInput = new Phaser.Class({
       },this);
     }
     else {
-      if (event.key !== 'Shift') {
+      if (key !== 'Shift') {
         this.badKeySFX.play();
       }
     }

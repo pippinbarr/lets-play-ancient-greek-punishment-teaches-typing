@@ -38,8 +38,7 @@
 - ~~Add the appropriate texts~~
 - ~~Think about the "I will not" conflict (between the two - it's not the end of the world of course, but does mean you have no idea which is which for the very first typing sequence and have to randomly pick one, which kind of sucks for the player if they pick the "wrong" one...)~~
 - ~~__I DECREE THAT IT IS FUNNY AND IT WORKS__ Should one be all upper case and one all lower case to consistent avoid the problem? Pretty awkward... (but it's kind of funny just this once? Uppercase being the apple and lower case being the water... kind of directly relevant?)~~
-
-- Think about the error sound problem (every correct character for one is incorrect for the other)
+- ~~Think about the error sound problem (every correct character for one is incorrect for the other)~~
 
 # Danaids
 
