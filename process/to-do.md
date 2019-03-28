@@ -61,7 +61,7 @@
 
 # General
 
-- Remove all non-typeable characters from texts
+- ~~Remove all non-typeable characters from texts~~
 
 # Mobile?
 
@@ -71,3 +71,4 @@
 
 - ~~Highlighting the wrong fucking letter!~~
 - ~~__SEEMS LIKE INCLUDING THE PRELOADER SCREEN FIXES IT?__ Doesn't run in Firefox???~~
+- ~~__JUST REPLACED THEM ALL WITH PERIODS AND LET'S PRAY__ Mis-replaced stuff in Danaids so there's a $1 at the end of every sentence!~~
