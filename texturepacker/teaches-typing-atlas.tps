@@ -181,6 +181,55 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
+            <key type="filename">images/camus/camus/camus_1.png</key>
+            <key type="filename">images/camus/camus/camus_2.png</key>
+            <key type="filename">images/camus/camus/camus_3.png</key>
+            <key type="filename">images/tantalus/stooping/stooping_1.png</key>
+            <key type="filename">images/tantalus/stooping/stooping_2.png</key>
+            <key type="filename">images/tantalus/stooping/stooping_3.png</key>
+            <key type="filename">images/tantalus/stooping/stooping_4.png</key>
+            <key type="filename">images/tantalus/stooping/stooping_5.png</key>
+            <key type="filename">images/tantalus/stooping/stooping_6.png</key>
+            <key type="filename">images/tantalus/stooping/stooping_7.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>6,6,13,13</rect>
+                <key>scale9Paddings</key>
+                <rect>6,6,13,13</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">images/camus/paper.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>1,0,2,1</rect>
+                <key>scale9Paddings</key>
+                <rect>1,0,2,1</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">images/camus/trash.png</key>
+            <key type="filename">images/prometheus/perch.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>2,2,3,3</rect>
+                <key>scale9Paddings</key>
+                <rect>2,2,3,3</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">images/danaids/bath/bath_1.png</key>
             <key type="filename">images/danaids/bath/bath_10.png</key>
             <key type="filename">images/danaids/bath/bath_2.png</key>
@@ -307,19 +356,6 @@
                 <rect>3,3,6,5</rect>
                 <key>scale9Paddings</key>
                 <rect>3,3,6,5</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">images/prometheus/perch.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>2,2,3,3</rect>
-                <key>scale9Paddings</key>
-                <rect>2,2,3,3</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -477,25 +513,6 @@
                 <rect>25,13,50,25</rect>
                 <key>scale9Paddings</key>
                 <rect>25,13,50,25</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">images/tantalus/stooping/stooping_1.png</key>
-            <key type="filename">images/tantalus/stooping/stooping_2.png</key>
-            <key type="filename">images/tantalus/stooping/stooping_3.png</key>
-            <key type="filename">images/tantalus/stooping/stooping_4.png</key>
-            <key type="filename">images/tantalus/stooping/stooping_5.png</key>
-            <key type="filename">images/tantalus/stooping/stooping_6.png</key>
-            <key type="filename">images/tantalus/stooping/stooping_7.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>6,6,13,13</rect>
-                <key>scale9Paddings</key>
-                <rect>6,6,13,13</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>

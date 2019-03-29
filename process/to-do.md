@@ -56,8 +56,14 @@
 
 # Camus
 
-- Sketch Camus scene
-- Think about failure animation
+- ~~Sketch Camus scene~~
+- ~~Think about failure animation~~
+- ~~Get text working~~
+- ~~Get basic failure working~~
+- Get reset from failure working
+- Force failure if they make it through? No, just repeat the text ha ha ha ha!
+- Maybe on completing the document it goes in the trash ha ha ha ha
+- SFX for page completion (victory? Or even book completion...)
 
 # General
 

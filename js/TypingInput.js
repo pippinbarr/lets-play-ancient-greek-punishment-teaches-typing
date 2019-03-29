@@ -1,13 +1,13 @@
 let TypingInput = new Phaser.Class({
 
   initialize: function TypingInput (parent,x,y,input,minWPM,textColor,cursorColor,customEvent,upper) {
-    console.log(x,y,textColor);
     this.scene = parent;
     this.x = x;
     this.y = y;
     this.enabled = true;
     this.wpm = 0;
     this.minWPM = minWPM;
+    this.words = 0;
     this.WORD_LENGTH = 6; // Actually it's 5 + a space/punctuation character
 
     this.customEvent = customEvent;
@@ -102,10 +102,10 @@ let TypingInput = new Phaser.Class({
   },
 
   handleInput: function (key) {
-    console.log(key,this.strings[this.currentText].charAt(this.typingIndex),this.isNextKey(key));
     if (this.isNextKey(key)) {
-      console.log(key)
-
+      if (key === ' ') {
+        this.words++;
+      }
       // Correct
       this.typingIndex = (this.typingIndex + 1) % this.strings[this.currentText].length;
       this.charsTyped++;
