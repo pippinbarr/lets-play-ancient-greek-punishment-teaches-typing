@@ -184,6 +184,9 @@
             <key type="filename">images/camus/camus/camus_1.png</key>
             <key type="filename">images/camus/camus/camus_2.png</key>
             <key type="filename">images/camus/camus/camus_3.png</key>
+            <key type="filename">images/camus/camus/camus_4.png</key>
+            <key type="filename">images/camus/camus/camus_5.png</key>
+            <key type="filename">images/camus/camus/camus_6.png</key>
             <key type="filename">images/tantalus/stooping/stooping_1.png</key>
             <key type="filename">images/tantalus/stooping/stooping_2.png</key>
             <key type="filename">images/tantalus/stooping/stooping_3.png</key>

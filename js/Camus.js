@@ -4,9 +4,6 @@ let Camus = new Phaser.Class({
 
   initialize: function Camus () {
     Phaser.Scene.call(this, { key: 'camus' });
-    this.MAX_FILL_TIME = 2000;
-    this.FILL_PER_POUR = 20;
-    this.currentVX = -1;
   },
 
   create: function () {
@@ -21,6 +18,8 @@ let Camus = new Phaser.Class({
     this.goodKeySFX.volume = 0.2;
     this.badKeySFX = this.sound.add('key-bad');
     this.badKeySFX.volume = 0.2;
+    this.victorySFX = this.sound.add('victory');
+    this.victorySFX.volume = 0.2;
 
     // Add camus
     this.camus = this.add.sprite(this.game.canvas.width/2, this.game.canvas.height/2 + 4*14, 'atlas', 'camus/camus/camus_1.png');
@@ -28,11 +27,19 @@ let Camus = new Phaser.Class({
 
     this.createAnimation('camus_idle','camus/camus/camus',1,1,5,0);
     this.createAnimation('camus_typing','camus/camus/camus',1,2,10,-1);
-    this.createAnimation('camus_defeated','camus/camus/camus',3,3,5,1);
+    this.createAnimation('camus_defeated','camus/camus/camus',3,3,5,0);
+    this.createAnimation('camus_victory','camus/camus/camus',4,6,5,0);
+    this.createAnimation('camus_unvictory','camus/camus/camus',6,4,5,0);
 
     this.camus.on('animationcomplete',function (animation,frame) {
       switch (animation.key) {
-        case 'camus_defeated':
+        case 'camus_unvictory':
+        this.camus.anims.play('camus_defeated');
+        setTimeout(() => {
+          this.emptySFX.play();
+          this.typingInput.reset();
+          this.typingInput.enable();
+        },2000);
         break;
       }
     },this);
@@ -68,11 +75,26 @@ let Camus = new Phaser.Class({
     let minWPM = INTERMEDIATE_WPM;
     let input = camusStrings;
 
-    this.typingInput = new TypingInput(this,100,10,input,minWPM,'#000',0xF09A00,true);
+    this.typingInput = new TypingInput(this,100,10,input,minWPM,'#000',0xF09A00,true,undefined,false);
     this.typingInput.create();
 
     this.input.keyboard.on('keydown', function (event) {
       if (!this.typingInput.enabled) return;
+
+      if (this.typingInput.isFinalKey(event.key)) {
+        this.typingInput.disable();
+        this.typingInput.cursor.visible  = false;
+        this.victorySFX.play();
+        this.camus.anims.play('camus_victory');
+        setTimeout(() => {
+          this.children.bringToTop(this.trash);
+          this.children.bringToTop(this.ground);
+          this.children.bringToTop(this.informationText);
+          this.tweenPagesToTrash(this.resetPostVictory.bind(this));
+        },3000);
+
+        return;
+      }
 
       let inputCorrect = this.typingInput.isNextKey(event.key);
 
@@ -85,33 +107,64 @@ let Camus = new Phaser.Class({
         console.log("Playing camus_defeated");
         this.camus.anims.play('camus_defeated');
         setTimeout(() => {
-          if (this.pages === 0) {
-            this.pageSprites.create(this.camus.x + 4*8, this.nextPageSpriteY, 'atlas', 'camus/paper.png').setScale(4,4);
-          }
+          this.pageSprites.create(this.camus.x + 4*8, this.nextPageSpriteY, 'atlas', 'camus/paper.png').setScale(4,4);
           this.children.bringToTop(this.trash);
           this.children.bringToTop(this.ground);
+          this.children.bringToTop(this.informationText);
           setTimeout(() => {
-            this.tweens.add({
-              targets: this.pageSprites.getChildren(),
-              x: this.trash.x,
-              duration: 1000,
-              repeat: 0,
-              onComplete: () => {
-                this.tweens.add({
-                  targets: this.pageSprites.getChildren(),
-                  y: '+=60',
-                  duration: 1000,
-                  repeat: 0,
-                  onComplete: () => {
-
-                  },
-                });
-              },
-            });
+            this.tweenPagesToTrash(this.resetPostError.bind(this));
           },1000);
         },1000);
       }
     },this);
+  },
+
+  resetPostError: function () {
+    setTimeout(() => {
+      this.pages = 0;
+      this.informationText.text = `PAGES TYPED: ${this.pages}`
+      this.nextPageSpriteY = this.camus.y + 4*2;
+      this.nextPageSpriteAt = 1;
+      this.pageSprites.clear();
+      this.emptySFX.play();
+      this.camus.anims.play('camus_idle');
+      this.typingInput.reset();
+      this.typingInput.enable();
+    },1000);
+  },
+
+  resetPostVictory: function () {
+    setTimeout(() => {
+      this.pages = 0;
+      this.informationText.text = `PAGES TYPED: ${this.pages}`
+      this.nextPageSpriteY = this.camus.y + 4*2;
+      this.nextPageSpriteAt = 1;
+      this.pageSprites.clear();
+      this.camus.anims.play('camus_unvictory');
+      this.emptySFX.play();
+    },2000);
+  },
+
+
+  tweenPagesToTrash: function (complete) {
+    this.tweens.add({
+      targets: this.pageSprites.getChildren(),
+      x: this.trash.x,
+      duration: 2000,
+      repeat: 0,
+      onComplete: () => {
+        this.typingInput.hide();
+        this.tweens.add({
+          targets: this.pageSprites.getChildren(),
+          y: '+=70',
+          duration: 500,
+          repeat: 0,
+          onComplete: () => {
+            complete();
+          },
+        });
+      },
+    });
   },
 
   update: function (time,delta) {

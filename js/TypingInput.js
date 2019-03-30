@@ -1,12 +1,13 @@
 let TypingInput = new Phaser.Class({
 
-  initialize: function TypingInput (parent,x,y,input,minWPM,textColor,cursorColor,customEvent,upper) {
+  initialize: function TypingInput (parent,x,y,input,minWPM,textColor,cursorColor,customEvent,upper,showWPM) {
     this.scene = parent;
     this.x = x;
     this.y = y;
     this.enabled = true;
     this.wpm = 0;
     this.minWPM = minWPM;
+    this.showWPM = showWPM;
     this.words = 0;
     this.WORD_LENGTH = 6; // Actually it's 5 + a space/punctuation character
 
@@ -48,6 +49,18 @@ let TypingInput = new Phaser.Class({
 
   },
 
+  reset: function ()  {
+    this.texts.forEach((text) => {
+      text.destroy();
+    });
+    this.cursor.destroy();
+    if (this.wpmText !== undefined) this.wpmText.destroy();
+    this.texts = [];
+    this.typingIndex = 0;
+    this.words = 0;
+    this.create();
+  },
+
   create: function () {
     if (this.customEvent === undefined) {
       this.scene.input.keyboard.on('keydown', function (event) {
@@ -65,7 +78,7 @@ let TypingInput = new Phaser.Class({
       this.wpm = this.wpms.reduce((a,b) => a + b,0)/this.wpms.length;
       this.wpm = Math.floor(this.wpm);
       let wpmString = `${this.wpm} / ${this.minWPM} WPM`;
-      this.wpmText.text = wpmString;
+      if (this.showWPM !== false) this.wpmText.text = wpmString;
       this.charsTyped = 0;
     },150);
 
@@ -90,15 +103,21 @@ let TypingInput = new Phaser.Class({
     }
     this.CHAR_WIDTH = totalWidth / totalChars;
 
-    // Add WPM text
-    let wpmStyle = { fontFamily: 'Commodore', fontSize: '24px', fill: '#fff', wordWrap: true, align: 'center' };
-    let wpmString = `0 / ${this.minWPM} WPM`;
-    this.wpmText = this.scene.add.text(100,340,wpmString,wpmStyle);
-    this.wpmText.setOrigin(0);
+    if (this.showWPM !== false) {
+      // Add WPM text
+      let wpmStyle = { fontFamily: 'Commodore', fontSize: '24px', fill: '#fff', wordWrap: true, align: 'center' };
+      let wpmString = `0 / ${this.minWPM} WPM`;
+      this.wpmText = this.scene.add.text(100,340,wpmString,wpmStyle);
+      this.wpmText.setOrigin(0);
+    }
   },
 
   isNextKey: function (key) {
     return (key === this.strings[this.currentText].charAt(this.typingIndex));
+  },
+
+  isFinalKey: function (key) {
+    return this.isNextKey(key) && this.currentText === this.strings.length - 1 && this.typingIndex === this.strings[this.currentText].length - 1;
   },
 
   handleInput: function (key) {
@@ -139,9 +158,7 @@ let TypingInput = new Phaser.Class({
   },
 
   update: function (time,delta) {
-
     if (this.gameIsOver) return;
-
   },
 
   disable: function () {
@@ -157,6 +174,14 @@ let TypingInput = new Phaser.Class({
     this.texts.forEach(function (text) {
       text.alpha = 1;
     });
-  }
+  },
+
+  hide: function () {
+    this.texts.forEach(function (text) {
+      text.visible = false;
+    });
+    this.enabled = false;
+    this.cursor.visible = false;
+  },
 
 });
