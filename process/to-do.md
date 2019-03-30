@@ -73,9 +73,21 @@
 
 # Testing
 
-- Send to J+M
-- Send to Jhave
-- Send to Jess
+- ~~Send to J+M~~
+- ~~Send to Jhave~~
+- ~~Send to Jess~~
+
+- Test it myself
+- Think about the texts (especially beginner and intermediate, advanced is probably fine)
+
+# Release...
+
+- Create animated GIFs for all levels (for press)
+- Email press
+- Notify mailing list
+- (All that kind of stuff)
+- Tweet it and so on
+- Put it out there man
 
 # Mobile?
 
