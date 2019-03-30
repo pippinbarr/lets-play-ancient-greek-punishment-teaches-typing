@@ -64,13 +64,18 @@
 - ~~Force failure if they make it through? No, just repeat the text ha ha ha ha!~~
 - ~~Maybe on completing the document it goes in the trash ha ha ha ha~~
 - ~~SFX for page completion (victory? Or even book completion...)~~
-
-- Readd difficulty selection for Camus but make it only "NIGHTMARE"
-- Implement unlock of Camus (including explainer text)
+- ~~Re-add difficulty selection for Camus but make it only "NIGHTMARE"~~
+- ~~Implement unlock of Camus (including explainer text)~~
 
 # General
 
 - ~~Remove all non-typeable characters from texts~~
+
+# Testing
+
+- Send to J+M
+- Send to Jhave
+- Send to Jess
 
 # Mobile?
 

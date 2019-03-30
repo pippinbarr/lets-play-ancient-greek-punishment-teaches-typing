@@ -14,6 +14,10 @@ let Sisyphus = new Phaser.Class({
 
   create: function () {
 
+    if (difficulty === 'beginner') localStorage.setItem('triedBeginner',true);
+    if (difficulty === 'intermediate') localStorage.setItem('triedIntermediate',true);
+    if (difficulty === 'advanced') localStorage.setItem('triedAdvanced',true);
+
     this.cameras.main.setBackgroundColor('#aaf');
 
     this.gameIsOver = false;
