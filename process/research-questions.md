@@ -25,3 +25,18 @@ With Typing Edition here I think it's a bit of a combination. The typing is a st
 The typing here can also be a form of storytelling as in Eveline, a way to reveal a story as you go along. In this case I currently imagine revealing a narrative version of the mythological punishment itself (though this isn't set at the time of writing). It's a further drive to participate, perhaps, because you want to know what's going on. There's some kind of opportunity here to either create a moment of tension when the story loops (if that's what happens) or to explore the idea of an infinitely generated text about the punishment, which would then mirror the punishment itself in a different mode.
 
 In my first journal entry I've also already fretted about the agency question - if you don't type specific words and have the action carried out, your agency is kind of more a continuous force like a wind blowing? You're more a source of energy for a character to continue I suppose - which really mirrors the Mavis Beacon approach to agency - you don't steer or drive the car, you basic provide the gas/velocity through your typing. So your agency is highly restricted relative to the more complex activity represented, but it's still relevant and crucial.
+
+---
+
+# Research Questions v2 (Saturday, 30 March 2019, 15:21PM)
+
+Okay well I'm impressed by the stuff above, it's way more detailed than I remember actually writing about. I think it still holds water having actually largely finished the game at this point. What else...
+
+## Centrality of the text
+
+The text selection turned out to be the major activity in some ways, with the rest being details. I ended up with basic verbs for beginner, grammars that produce repentance sentences for intermediate, and Wikipedia entries for advanced. I like how that went, especially how they provide really quite different relationships between player, avatar, text.
+
+- Beginner is a kind of direct idea of almost treating each word as a "button" you press to perform an action. "Push" for Sisyphus for instance. It's very straightforward, a verb you type to perform that action.
+- Intermediate gets at the idea of punishment explicitly, giving us sort of an internal monologue, or perhaps an additional layer of punishment on top of the physical act, where the character has to acknowledge the terrible things it has done. This also has the nice effect of being vaguely educational if you don't know the myth in the first place - you get some idea of who this is and why they're in hell.
+- Advanced is much more meta and gets at the idea of punishment through an overwhelming text to type through, and specifically one which is "about" the thing the character desires (escape, an apple, a bath), taunting them by forcing them to dwell on it, even as the punishment they're acting out (through the text) makes it inaccessible
+- And then there's Nightmare for Camus, which is just a bit of fun at the end there, but which is a nice idea I think - to punish Camus for his idea that Sisyphus, who is unhappy by definition, might be happy. A kind of "see how you like it then" moment for Camus, some realism against his idealism?

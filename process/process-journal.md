@@ -255,3 +255,21 @@ Post Sisyphus I went ahead and did Prometheus. His advanced text is about Escapo
 Overall it's progressing smoothly, and I feel like I'm using Phaser better than ever (tweens have become a major thing along with use of callbacks to facilitate much smoother code). No problems foreseen with Zeno nor any of the others and just Camus as brand new code to write at some point. Once it's done it's done. Very very outside chance I could finish this month? Potentially I  could finish the game but release in April? Something like that. And: whatever. I could probably finish and release two or three in April in that case?
 
 This is kind of boring for "process", but it's just going fine and this is definitely one of the least redesign-y versions of the game, so it's not surprising there aren't buckets of design insight.
+
+---
+
+# "Finished" (Saturday, 30 March 2019, 15:14PM)
+
+Wow I guess I've been doing this faster than I thought. We're here (less than 6 days later) and I've finished Zeno, Daniads, Tantalus, and Camus. I mean, that's in no small part because it isn't actually very complex to produce each level after I set the specific 'tone' with Sisyphus. Most of the programming thinking was done.
+
+With the exception of Camus, which has a different structure which I'm pretty happy with all told.
+
+- You're typing the famous essay
+- If you make a single error, he hangs his head and all the pages are swept into the trash
+- If you finish the entire essay, he raises his arms in victory, but then the pages are swept into the trash, and he droops, then begins the whole essay again
+
+I'm really quite happy with that, it has some good comic timing involved, and is a funny 'reward' for anyone who bothers to type in the entire Camus essay (also known as: nobody).
+
+In the end I think all the levels are pretty strong reimaginings of the original game in the context of typing. I'm pleased with the different difficulty level text selections overall, though I'll want to do at least one more pass through them before releasing it properly. The advanced texts are perfect, I think, it's just beginner and intermediate that need some work.
+
+I might jump over to research questions to see if I have any thoughts about that...
