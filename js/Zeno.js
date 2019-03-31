@@ -16,15 +16,6 @@ let Zeno = new Phaser.Class({
 
   create: function () {
 
-    // let test = 50;
-    // let count = 0.25;
-    // while (test < 100) {
-    //   console.log(count);
-    //   test += (100 - test)/2;
-    //   count += 0.25;
-    // }
-    // console.log(count);
-
     this.cameras.main.setBackgroundColor('#dad');
 
     // Sound
@@ -139,7 +130,7 @@ let Zeno = new Phaser.Class({
       input = zenoAdvancedStrings;
       break;
     }
-    this.typingInput = new TypingInput(this,100,10,input,minWPM,'#000',0x00A830);
+    this.typingInput = new TypingInput(this,100,30,input,minWPM,'#000',155,80,'#000',0x00A830);
     this.typingInput.create();
   },
 

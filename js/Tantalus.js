@@ -72,7 +72,6 @@ let Tantalus = new Phaser.Class({
         break;
 
         default:
-        console.log(animation.key + " completed. Unhandled.");
       }
     },this);
 
@@ -174,7 +173,7 @@ let Tantalus = new Phaser.Class({
       break;
     }
 
-    this.typingInputApple = new TypingInput(this,100,10,input,minWPM,'#777',0xff0000,true,true);
+    this.typingInputApple = new TypingInput(this,100,30,input,minWPM,'#fff',155,80,'#fff',0xff0000,true,true);
     this.typingInputApple.create();
 
     switch (difficulty) {
@@ -194,7 +193,7 @@ let Tantalus = new Phaser.Class({
       break;
     }
 
-    this.typingInputWater = new TypingInput(this,100,300,input,minWPM,'#fff',0xff0000,true,false);
+    this.typingInputWater = new TypingInput(this,100,340,input,minWPM,'#fff',155,290,'#fff',0xff0000,true,false);
     this.typingInputWater.create();
 
     this.input.keyboard.on('keydown', function (event) {
@@ -205,7 +204,6 @@ let Tantalus = new Phaser.Class({
       if (waterCorrect) this.typingInputWater.handleInput(event.key);
 
       if (!waterCorrect && !appleCorrect && event.key != 'Shift') {
-        console.log("Bad.")
         this.badKeySFX.play();
       }
     },this);

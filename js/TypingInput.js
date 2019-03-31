@@ -1,12 +1,15 @@
 let TypingInput = new Phaser.Class({
 
-  initialize: function TypingInput (parent,x,y,input,minWPM,textColor,cursorColor,customEvent,upper,showWPM) {
+  initialize: function TypingInput (parent,x,y,input,minWPM,wpmColor,wpmX,wpmY,textColor,cursorColor,customEvent,upper,showWPM) {
     this.scene = parent;
     this.x = x;
     this.y = y;
     this.enabled = true;
     this.wpm = 0;
-    this.minWPM = minWPM;
+    this.minWPM = 1;
+    this.wpmColor = wpmColor;
+    this.wpmX = wpmX;
+    this.wpmY = wpmY;
     this.showWPM = showWPM;
     this.words = 0;
     this.WORD_LENGTH = 6; // Actually it's 5 + a space/punctuation character
@@ -77,7 +80,7 @@ let TypingInput = new Phaser.Class({
       if (this.wpms.length > 5) this.wpms.shift();
       this.wpm = this.wpms.reduce((a,b) => a + b,0)/this.wpms.length;
       this.wpm = Math.floor(this.wpm);
-      let wpmString = `${this.wpm} / ${this.minWPM} WPM`;
+      let wpmString = `${this.wpm} WPM`;
       if (this.showWPM !== false) this.wpmText.text = wpmString;
       this.charsTyped = 0;
     },150);
@@ -105,10 +108,10 @@ let TypingInput = new Phaser.Class({
 
     if (this.showWPM !== false) {
       // Add WPM text
-      let wpmStyle = { fontFamily: 'Commodore', fontSize: '24px', fill: '#fff', wordWrap: true, align: 'center' };
-      let wpmString = `0 / ${this.minWPM} WPM`;
-      this.wpmText = this.scene.add.text(100,340,wpmString,wpmStyle);
-      this.wpmText.setOrigin(0);
+      let wpmStyle = { fontFamily: 'Commodore', fontSize: '24px', fill: this.wpmColor, wordWrap: true, align: 'left' };
+      let wpmString = `0 WPM`;
+      this.wpmText = this.scene.add.text(this.wpmX,this.wpmY,wpmString,wpmStyle);
+      this.wpmText.setOrigin(1,0);
     }
   },
 
@@ -149,6 +152,7 @@ let TypingInput = new Phaser.Class({
     else {
       if (key !== 'Shift') {
         this.badKeySFX.play();
+        this.wpms = [0];
       }
     }
   },

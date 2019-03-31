@@ -7,7 +7,6 @@ let Menu = new Phaser.Class({
 
   initialize: function Menu () {
     Phaser.Scene.call(this, { key: 'menu' });
-    console.log("Menu()");
   },
 
   create: function () {
@@ -20,8 +19,6 @@ let Menu = new Phaser.Class({
     let triedIntermediate = localStorage.getItem('triedIntermediate');
     let triedAdvanced = localStorage.getItem('triedAdvanced');
     camusUnlocked = triedBeginner && triedIntermediate && triedAdvanced;
-
-    console.log(triedBeginner,triedIntermediate,triedAdvanced,camusUnlocked);
 
     let items = [
       { text: '(S)ISYPHUS', key: 'S', scene: 'sisyphus' },

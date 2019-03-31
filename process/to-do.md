@@ -76,9 +76,8 @@
 - ~~Send to J+M~~
 - ~~Send to Jhave~~
 - ~~Send to Jess~~
-
-- Test it myself
-- Think about the texts (especially beginner and intermediate, advanced is probably fine)
+- ~~Test it myself~~
+- ~~__REVIEWED__ Think about the texts (especially beginner and intermediate, advanced is probably fine)~~
 
 # Release...
 
@@ -98,6 +97,5 @@
 - ~~Highlighting the wrong fucking letter!~~
 - ~~__SEEMS LIKE INCLUDING THE PRELOADER SCREEN FIXES IT?__ Doesn't run in Firefox???~~
 - ~~__JUST REPLACED THEM ALL WITH PERIODS AND LET'S PRAY__ Mis-replaced stuff in Danaids so there's a $1 at the end of every sentence!~~
-
-- WPM doubled for Tantalus looks awkful (I guess move the WPM counters around)
-- WPM looks shitty in general
+- ~~WPM doubled for Tantalus looks awkful (I guess move the WPM counters around)~~
+- ~~__THINK I'VE COME UP WITH A PRETTY REASONABLE CONVENTION THAT AT LEAST MAKES IT CONSISTENT__ WPM looks shitty in general~~

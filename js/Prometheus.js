@@ -131,7 +131,7 @@ let Prometheus = new Phaser.Class({
       input = prometheusAdvancedStrings;
       break;
     }
-    this.typingInput = new TypingInput(this,100,10,input,minWPM,'#000',0xFCFB00);
+    this.typingInput = new TypingInput(this,100,30,input,minWPM,'#000',155,80,'#000',0xFCFB00);
     this.typingInput.create();
   },
 
@@ -164,8 +164,6 @@ let Prometheus = new Phaser.Class({
   },
 
   land: function () {
-    console.log("land");
-    console.log(this.landTargetX,this.landTargetY,this.getFlightDuration(this.landTargetX,this.landTargetY));
     let eagleTweenHover = this.tweens.add({
       targets: this.eagle,
       x: this.landTargetX,
@@ -173,7 +171,6 @@ let Prometheus = new Phaser.Class({
       duration: this.getFlightDuration(this.landTargetX,this.landTargetY)+0.0001,
       repeat: 0,
       onComplete: () => {
-        console.log("land complete");
         this.eagle.x = this.landTargetX;
         this.eagle.y = this.landTargetY;
         this.perched = true;
@@ -186,7 +183,6 @@ let Prometheus = new Phaser.Class({
   },
 
   hover: function () {
-    console.log("hover");
     this.perched = false;
     clearTimeout(this.peckTimeout);
     this.eagle.anims.play('eagle_flying');
@@ -203,8 +199,6 @@ let Prometheus = new Phaser.Class({
   },
 
   peck: function () {
-    console.log("peck")
-
     this.eagle.anims.play("eagle_peck");
     this.peckSFX.play();
 

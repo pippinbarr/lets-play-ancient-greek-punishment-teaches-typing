@@ -93,17 +93,19 @@ let prometheusBeginnerGrammar = {
 };
 let prometheusIntermediateGrammar = {
   'champion': ['champion','help','assist','look after','help out'],
+  'hide': ['hide','conceal','secrete'],
   'fire': ['fire','the fire of creative power'],
   'give': ['gift','provide','give','hand'],
   'humans': ['the humans','humans','humanity','mankind'],
+  'facilitate': ['facilitate','aid','promote','champion'],
   'crime': [
-    'steal #fire#',
-    'steal #fire# and #give# it to #humans#',
-    'steal #fire# from Hephaestus\'s workshop',
-    'hide #fire# in a hollow fennel-stalk',
-    'hide #fire# in a hollowed pumpkin',
-    'hide #fire# in a hollowed reed',
-    'facilitate progress and civilization',
+    '#steal# #fire#',
+    '#steal# #fire# and #give# it to #humans#',
+    '#steal# #fire# from Hephaestus\'s workshop',
+    '#hide# #fire# in a hollow fennel-stalk',
+    '#hide# #fire# in a hollowed pumpkin',
+    '#hide# #fire# in a hollowed reed',
+    '#facilitate# progress and civilization',
     '#champion# #humans#',
     'pity #humans#',
     'trick Zeus into eating bones and fat',
@@ -191,10 +193,6 @@ let zenoBeginnerGrammar = {
   'origin':['#verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb#'],
 };
 let zenoIntermediateGrammar = {
-  'champion': ['champion','help','assist','look after','help out'],
-  'fire': ['fire','the fire of creative power'],
-  'give': ['gift','provide','give','hand'],
-  'humans': ['the humans','humans','humanity','mankind'],
   'concoct': ['indulge in', 'concoct','invent','come up with','make up'],
   'cute': ['confusing ','contrarian ','provocative ','annoying ','frustrating ','destructive ','stupid ','irritating ',' '],
   'ideas': ['reductio ad absurdums', 'ideas','thought experiments','theories','arguments'],
@@ -262,11 +260,11 @@ let zenoAdvancedStrings = [
 
 // DANAIDS //
 let danaidsBeginnerGrammar = {
-  'verb': ['fill','pour','wash'],
+  'verb': ['fill','carry','pour'],
   'origin':['#verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb#'],
 };
 let danaidsIntermediateGrammar = {
-  'kill': ['kill','murder','assassinate'],
+  'kill': ['kill','murder','assassinate','take the life of','end the life of','slaughter'],
   'husband': ['Lynceus', 'Proteus', 'Busiris', 'Enceladus', 'Lycus', 'Daiphron', 'Istrus', 'Chalcodon', 'Agenor', 'Chaetus', 'Diocorystes', 'Alces', 'Alcmenor', 'Hippothous', 'Euchenor', 'Hippolytus', 'Agaptolemus', 'Cercetes', 'Eurydamas', 'Aegius', 'Argius', 'Archelaus', 'Menemachus', 'Clitus', 'Sthenelus', 'Chrysippus', 'Eurylochus', 'Phantes', 'Peristhenes', 'Hermus', 'Dryas', 'Potamon', 'Cisseus', 'Lixus', 'Imbrus', 'Bromius', 'Polyctor', 'Chthonius', 'Periphas', 'Oeneus', 'Aegyptus', 'Menalces', 'Lampus', 'Idmon', 'Idas', 'Daiphron', 'Pandion', 'Arbelus', 'Hyperbius', 'Hippocorystes',],
   'weddingnight': ['after the wedding', 'the night of the wedding ceremony', 'on my wedding night','on the night of my wedding','on the night of the wedding ceremony'],
   'crime': [
@@ -335,7 +333,7 @@ let danaidsAdvancedStrings = [
 
   // Tantalus
   let tantalusAppleBeginnerGrammar = {
-    'verb': ['reach','take','eat'],
+    'verb': ['reach','take','grab'],
     'origin':['#verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb#'],
   };
   let tantalusAppleIntermediateGrammar = {
@@ -351,7 +349,7 @@ let danaidsAdvancedStrings = [
     'banquet': ['a banquet','a meal','food'],
     'boil': ['boil','cook'],
     'pot': ['a pot','a cauldron'],
-    'trick': ['trick','fool','deceive','cause'],
+    'trick': ['trick','fool','deceive'],
     'eating': ['eating','devouring','eating the shoulder of','swallowing the shoulder of','chewing up the shoulder of'],
     'crime': [
       '#steal# #ambrosia# from #gods#',
@@ -446,7 +444,7 @@ let danaidsAdvancedStrings = [
 
   // Tantalus
   let tantalusWaterBeginnerGrammar = {
-    'verb': ['stoop','bend','drink'],
+    'verb': ['stoop','bend','kneel'],
     'origin':['#verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb#'],
   };
   let tantalusWaterIntermediateGrammar = tantalusAppleIntermediateGrammar;

@@ -161,7 +161,7 @@ let Danaids = new Phaser.Class({
       break;
     }
 
-    this.typingInput = new TypingInput(this,100,10,input,minWPM,'#000',0x033CFF);
+    this.typingInput = new TypingInput(this,100,30,input,minWPM,'#000',155,80,'#000',0x033CFF);
     this.typingInput.create();
   },
 

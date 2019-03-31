@@ -104,7 +104,6 @@ let Camus = new Phaser.Class({
       else if (event.key != 'Shift') {
         this.badKeySFX.play();
         this.typingInput.disable();
-        console.log("Playing camus_defeated");
         this.camus.anims.play('camus_defeated');
         setTimeout(() => {
           this.pageSprites.create(this.camus.x + 4*8, this.nextPageSpriteY, 'atlas', 'camus/paper.png').setScale(4,4);
