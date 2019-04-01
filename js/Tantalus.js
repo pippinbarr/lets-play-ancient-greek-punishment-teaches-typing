@@ -236,6 +236,7 @@ let Tantalus = new Phaser.Class({
       this.tantalus.x -= 1*8;
       this.tantalus.y += 3*8;
       this.tantalus.anims.play('stoop');
+      this.water.play('water_lower');
     }
   },
 
@@ -243,6 +244,7 @@ let Tantalus = new Phaser.Class({
     let key = this.tantalus.anims.currentAnim.key
     if (key === 'stoop' || key  === 'drinking_fail') {
       this.tantalus.anims.play('unstoop');
+      this.water.play('water_raise');
     }
   },
 
@@ -250,6 +252,7 @@ let Tantalus = new Phaser.Class({
     let key = this.tantalus.anims.currentAnim.key
     if (key ==='tantalus_idle') {
       this.tantalus.anims.play('reach');
+      this.branch.play('branch_raise');
     }
   },
 
@@ -257,6 +260,7 @@ let Tantalus = new Phaser.Class({
     let key = this.tantalus.anims.currentAnim.key
     if (key === 'reach' || key  === 'eating_fail') {
       this.tantalus.anims.play('unreach');
+      this.branch.play('branch_lower');
     }
   },
 
