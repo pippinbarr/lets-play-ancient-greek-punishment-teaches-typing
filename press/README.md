@@ -79,7 +79,7 @@ See animated GIFs below, really.
 ## Credits
 
 * Pippin Barr: basically everything?
-* Jim and Mary Barr: testing
+* Jim and Mary Barr (aka my parents), David "Jhave" Johnston, Jess Rowan Marcotte: testing! Thanks!
 
 ## Contact
 
