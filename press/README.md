@@ -16,7 +16,7 @@ Pippin is an experimental game developer who has made games about everything fro
 
 ## Description
 
-_Type! Type damn you! Faster! More! Repent! Again! Repent I say! Faster! Faster! Forever! It's Mavis Beacon Teaches Typing in the depths of Hades!_
+_Type! Type the boulder up the hill! Type the eagle away from your liver! Type, damn you! It's Mavis Beacon Teaches Typing in the depths of Hades! Feel the burn of your repetitive strain injuries!_
 
 ---
 
@@ -24,7 +24,7 @@ _Let's Play: Ancient Greek Punishment: Teaches Typing_ is another edition in the
 
 ## History
 
-The _Teaches Typing_ version came up essentially as part of my response to the birth of my son Felix. Once he was born I realised that I was fundamentally going to need game projects that would be fairly easy to conceptualise and execute, while still providing me with enough design interest to be worthwhile. I sat down and came up with around ten variations on the _Ancient Greek Punishment_ series, figuring that I could just spend the year making and remaking the "same game" over and over in different versions. So far so good!
+The _Teaches Typing_ version came up essentially as part of my response to the birth of my son Felix. Once he was born I realised that I was fundamentally going to need game projects that would be fairly easy to conceptualise and execute, while still providing me with enough design interest to be worthwhile. I sat down and came up with around ten variations on the _Ancient Greek Punishment_ series, figuring that I could just spend the year making and remaking the "same game" over and over in different versions. So far so good! If you want some beard-stroking style meditations on the game and what it means, see the [process journal](https://github.com/pippinbarr/lets-play-ancient-greek-punishment-teaches-typing/blob/master/process/process-journal.md) or the [research questions](https://github.com/pippinbarr/lets-play-ancient-greek-punishment-teaches-typing/blob/master/process/research-questions.md).
 
 _Let's Play: Ancient Greek Punishment: Teaches Typing_ is also a continuation of my project to apply the game development documentation approach I've been working on with my colleagues Rilla Khaled and Jonathan Lessard. We've come to call this approach the [MDMA](http://www.gamesasresearch.com/mdma) (for me it stands for _Method for Design Materialisation and Analysis_) and it forms a fundamental part of our [Games as Research](http://www.gamesasresearch.com/) project. So, if you want to, you can read a lot about the game's development by reading its [process documentation](https://github.com/pippinbarr/lets-play-ancient-greek-punishment-teaches-typing/blob/master/process/README.md) and by going through its [commit history](https://github.com/pippinbarr/lets-play-ancient-greek-punishment-teaches-typing/commits/master).
 
@@ -38,7 +38,7 @@ _Let's Play: Ancient Greek Punishment: Teaches Typing_ is an open source game li
 
 - Typing!
 - A lot of typing!
-- Who knew you'd end up doing this much typing!
+- Who knew you'd end up doing this much typing?!
 - Repetitive strain injuries?!
 - Punishment!
 - Eternity!

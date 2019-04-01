@@ -13,7 +13,7 @@ let Tantalus = new Phaser.Class({
   },
 
   create: function () {
-    this.cameras.main.setBackgroundColor('#dda');
+    this.cameras.main.setBackgroundColor('#ada');
 
     // Sound
     this.waterDownSFX = this.sound.add('swoopdown');

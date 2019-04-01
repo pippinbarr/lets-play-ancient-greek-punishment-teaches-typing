@@ -81,7 +81,8 @@
 
 # Release...
 
-- Create animated GIFs for all levels (for press)
+- ~~Create animated GIFs for all levels (for press)~~
+- ~~Finalise press kit~~
 - Email press
 - Notify mailing list
 - (All that kind of stuff)
