@@ -67,7 +67,7 @@ let Camus = new Phaser.Class({
     // Add information
     let informationStyle = { fontFamily: 'Commodore', fontSize: '24px', fill: '#fff', wordWrap: true, align: 'center' };
     let informationString = `PAGES TYPED: ${this.pages}`;
-    this.informationText = this.add.text(this.game.canvas.width - 350,320,informationString,informationStyle);
+    this.informationText = this.add.text(this.game.canvas.width - 350,340,informationString,informationStyle);
     this.informationText.setOrigin(0);
   },
 
@@ -75,7 +75,7 @@ let Camus = new Phaser.Class({
     let minWPM = INTERMEDIATE_WPM;
     let input = camusStrings;
 
-    this.typingInput = new TypingInput(this,100,10,input,minWPM,'#000',0xF09A00,true,undefined,false);
+    this.typingInput = new TypingInput(this,100,30,input,minWPM,'#fff',0,0,'#000',0xF09A00,true,undefined,false);
     this.typingInput.create();
 
     this.input.keyboard.on('keydown', function (event) {
