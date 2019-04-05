@@ -63,7 +63,7 @@ See animated GIFs below, really.
 
 ## Press
 
-- Coming soon?
+- Nate Crowley, [Let's Play: Ancient Greek Punishment: Teaches Typing is as hellish as it sounds](https://www.rockpapershotgun.com/2019/04/05/lets-play-ancient-greek-punishment-teaches-typing-is-as-hellish-as-it-sounds/). Rock, Paper, Shotgun. 5 April 2019.
 
 ## Additional Links
 
