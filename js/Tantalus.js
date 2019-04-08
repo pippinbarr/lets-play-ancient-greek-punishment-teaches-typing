@@ -196,7 +196,7 @@ let Tantalus = new Phaser.Class({
     this.typingInputWater = new TypingInput(this,100,340,input,minWPM,'#fff',155,290,'#fff',0xff0000,true,false);
     this.typingInputWater.create();
 
-    this.input.keyboard.on('keydown', function (event) {
+    document.addEventListener('keydown', (event) => {
       let appleCorrect = this.typingInputApple.isNextKey(event.key);
       let waterCorrect = this.typingInputWater.isNextKey(event.key);
 
@@ -206,7 +206,7 @@ let Tantalus = new Phaser.Class({
       if (!waterCorrect && !appleCorrect && event.key != 'Shift') {
         this.badKeySFX.play();
       }
-    },this);
+    });
 
   },
 

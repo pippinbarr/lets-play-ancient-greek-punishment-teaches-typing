@@ -78,7 +78,7 @@ let Camus = new Phaser.Class({
     this.typingInput = new TypingInput(this,100,30,input,minWPM,'#fff',0,0,'#000',0xF09A00,true,undefined,false);
     this.typingInput.create();
 
-    this.input.keyboard.on('keydown', function (event) {
+    document.addEventListener('keydown', (event) => {
       if (!this.typingInput.enabled) return;
 
       if (this.typingInput.isFinalKey(event.key)) {

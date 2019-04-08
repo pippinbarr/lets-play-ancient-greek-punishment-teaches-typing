@@ -66,7 +66,7 @@ let TypingInput = new Phaser.Class({
 
   create: function () {
     if (this.customEvent === undefined) {
-      this.scene.input.keyboard.on('keydown', function (event) {
+      document.addEventListener('keydown', (event) => {
         if (this.enabled) this.handleInput(event.key);
       },this);
     }
@@ -116,6 +116,7 @@ let TypingInput = new Phaser.Class({
   },
 
   isNextKey: function (key) {
+    console.log(`key: ${key} | keyCode: ${key.charCodeAt(0)} | correct key: ${this.strings[this.currentText].charAt(this.typingIndex)} | correct keyCode: ${this.strings[this.currentText].charCodeAt(this.typingIndex)}`);
     return (key === this.strings[this.currentText].charAt(this.typingIndex));
   },
 
