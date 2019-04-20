@@ -65,6 +65,7 @@ See animated GIFs below, really.
 
 - Nate Crowley, [Let's Play: Ancient Greek Punishment: Teaches Typing is as hellish as it sounds](https://www.rockpapershotgun.com/2019/04/05/lets-play-ancient-greek-punishment-teaches-typing-is-as-hellish-as-it-sounds/). Rock, Paper, Shotgun. 5 April 2019.
 - [Ancient Greek Punishment: Teaches Typing – Browser Game](https://www.freegameplanet.com/ancient-greek-punishment-teaches-typing-browser-game/). Free Game Planet. 8 April 2019.
+- Joel Couture, [Increase Your WPM Through Ancient Greek Punishments With This Typing Game](https://indiegamesplus.com/2019/04/increase-your-wpm-through-ancient-greek-punishments-with-this-typing-game). Indie Games Plus. 19 April  2019.
 
 ## Additional Links
 
