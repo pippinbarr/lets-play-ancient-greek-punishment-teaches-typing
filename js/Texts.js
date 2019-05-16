@@ -92,6 +92,7 @@ let prometheusBeginnerGrammar = {
   'origin':['#verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb# #verb#'],
 };
 let prometheusIntermediateGrammar = {
+  'steal': ['steal','take'],
   'champion': ['champion','help','assist','look after','help out'],
   'hide': ['hide','conceal','secrete'],
   'fire': ['fire','the fire of creative power'],

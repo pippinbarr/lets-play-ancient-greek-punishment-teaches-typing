@@ -14,5 +14,8 @@ Links to texts, images, and other media that are related to this project in some
 ### [Research Questions](./research-questions.md)
 Attempts to frame what's meaningful about this project.
 
+### [Closing Statement](./closing-statement.md)
+Attempt to give a summary analysis of the project and its development.
+
 ### [Press Kit](../press/README.md)
 A press kit.
