@@ -5,6 +5,8 @@
 # [Play Online](https://pippinbarr.github.io/lets-play-ancient-greek-punishment-teaches-typing) (desktop only)
 
 ## Description
+*Type! Type the boulder up the hill! Type the eagle away from your liver! Type, damn you! It’s Mavis Beacon Teaches Typing in the depths of Hades! Feel the burn of your repetitive strain injuries!*
+
 _Let's Play: Ancient Greek Punishment: Teaches Typing_ is yet another new edition in the _Let's Play: Ancient Greek Punishment_ series, focusing on a retelling of five (kind of) mythological punishments. In _Teaches Typing_ you learn to type in this helpfully Sisyphean environment. It's like Mavis Beacon, but in Hades.
 
 ## Press
