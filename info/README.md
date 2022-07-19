@@ -1,4 +1,4 @@
-# Let's Play: Ancient Greek Punishment: Teaches Typing
+# *Let's Play: Ancient Greek Punishment: Teaches Typing*
 
 ![Banner](images/lets-play-ancient-greek-punishment-teaches-typing-banner.gif)
 
